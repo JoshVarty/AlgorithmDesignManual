@@ -6,13 +6,14 @@
 TEST(sample_test_case, sample_test)
 {
 	auto* root = new BinaryTree(2);
-	
 	auto* newNode = new BinaryTree(3);
 	auto* newNode2 = new BinaryTree(1);
 	root->Insert(newNode);
 	root->Insert(newNode2);
 
-	EXPECT_EQ(1, 1);
+	std::string result = root->ToString();
+
+	EXPECT_EQ(result, "123");
 }
 
 int main(int argc, char** argv)

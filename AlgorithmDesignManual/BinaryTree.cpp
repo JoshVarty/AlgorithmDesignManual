@@ -8,7 +8,7 @@ BinaryTree::BinaryTree(int item) {
 
 void BinaryTree::Insert(BinaryTree * newNode) {
 	
-	if (this->item > newNode->item) {
+	if (this->item < newNode->item) {
 		//put it right
 		if (this->right == nullptr) {
 			this->right = newNode;
