@@ -151,6 +151,78 @@ TEST(SearchTest, SearchOneHundredItems)
 	EXPECT_EQ(searchItem->item, 3);
 }
 
+#pragma endregion
+
+#pragma region IdenticalTests
+
+TEST(IdenticalTests, BasicTest)
+{
+	auto* firstRoot = new BinaryTree(1);
+	auto* secondRoot = new BinaryTree(1);
+
+	bool result = firstRoot->IsIdentical(secondRoot);
+	EXPECT_TRUE(result, true);
+}
+
+TEST(IdenticalTests, IdenticalThreeElements)
+{
+	auto* firstRoot = new BinaryTree(1);
+	firstRoot->Insert(new BinaryTree(2));
+	firstRoot->Insert(new BinaryTree(3));
+
+	auto* secondRoot = new BinaryTree(1);
+	secondRoot->Insert(new BinaryTree(2));
+	secondRoot->Insert(new BinaryTree(3));
+
+	bool result = firstRoot->IsIdentical(secondRoot);
+	EXPECT_TRUE(result);
+}
+
+TEST(IdenticalTests, NotIdenticalTest_ExtraElement)
+{
+	auto* firstRoot = new BinaryTree(1);
+	firstRoot->Insert(new BinaryTree(2));
+
+	auto* secondRoot = new BinaryTree(1);
+
+	bool result = firstRoot->IsIdentical(secondRoot);
+	EXPECT_FALSE(result);
+}
+
+TEST(IdenticalTests, NotIdenticalTest_ExtraElement2)
+{
+	auto* firstRoot = new BinaryTree(1);
+
+	auto* secondRoot = new BinaryTree(1);
+	secondRoot->Insert(new BinaryTree(2));
+
+	bool result = firstRoot->IsIdentical(secondRoot);
+	EXPECT_FALSE(result);
+}
+
+TEST(IdenticalTests, NotIdenticalTest_DifferentRoots)
+{
+	auto* firstRoot = new BinaryTree(1);
+
+	auto* secondRoot = new BinaryTree(2);
+
+	bool result = firstRoot->IsIdentical(secondRoot);
+	EXPECT_FALSE(result);
+}
+
+TEST(IdenticalTests, NotIdenticalTest_DifferentOrder)
+{
+	auto* firstRoot = new BinaryTree(3);
+	firstRoot->Insert(new BinaryTree(2));
+	firstRoot->Insert(new BinaryTree(1));
+
+	auto* secondRoot = new BinaryTree(1);
+	secondRoot->Insert(new BinaryTree(2));
+	secondRoot->Insert(new BinaryTree(3));
+
+	bool result = firstRoot->IsIdentical(secondRoot);
+	EXPECT_FALSE(result);
+}
 
 #pragma endregion
 

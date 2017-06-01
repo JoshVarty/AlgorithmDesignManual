@@ -8,13 +8,11 @@ public:
 	BinaryTree *left = nullptr;
 	BinaryTree *right = nullptr;
 
+	BinaryTree(int item);
 	BinaryTree * SearchTree(int searchValue);
 	BinaryTree * FindMinimum();
-	BinaryTree(int item);
-
-	std::string ToString();
 	void Insert(BinaryTree * node);
 
-	//Not sure about this one
-	void Delete(int value);
+	bool IsIdentical(BinaryTree * otherRoot);
+	std::string ToString();
 };

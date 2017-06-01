@@ -7,8 +7,7 @@ BinaryTree::BinaryTree(int item) {
 }
 
 BinaryTree * BinaryTree::SearchTree(int searchValue) {
-	if (searchValue == this->item)
-	{
+	if (searchValue == this->item) {
 		return this;
 	}
 
@@ -19,6 +18,7 @@ BinaryTree * BinaryTree::SearchTree(int searchValue) {
 		return this->left->SearchTree(searchValue);
 	}
 
+	//It's not here, the left, or right
 	return nullptr;
 }
 
@@ -29,6 +29,7 @@ BinaryTree * BinaryTree::FindMinimum() {
 
 	return this->left->FindMinimum();
 }
+
 
 void BinaryTree::Insert(BinaryTree * newNode) {
 	
@@ -51,6 +52,35 @@ void BinaryTree::Insert(BinaryTree * newNode) {
 			this->left->Insert(newNode);
 		}
 	}
+}
+
+bool BinaryTree::IsIdentical(BinaryTree * otherRoot) {
+
+	//If we don't have the same value, return false
+	if (this->item != otherRoot->item) {
+		return false;
+	}
+
+	//If we don't have similar child shape, return false
+	if ((this->left == nullptr && otherRoot->left != nullptr)
+		|| (this->left != nullptr && otherRoot->left == nullptr)
+		|| (this->right == nullptr && otherRoot->right != nullptr)
+		|| (this->right != nullptr && otherRoot->right == nullptr)) {
+		return false;
+	}
+	
+	//If there are children, visit them
+	bool leftEqual = true;
+	if (this->left != nullptr && otherRoot->left != nullptr) {
+		leftEqual = this->left->IsIdentical(otherRoot->left);
+	}
+
+	bool rightEqual = true;
+	if (this->right != nullptr && otherRoot->right != nullptr) {
+		rightEqual = this->right->IsIdentical(otherRoot->right);
+	}
+	
+	return leftEqual & rightEqual;
 }
 
 std::string BinaryTree::ToString() {
