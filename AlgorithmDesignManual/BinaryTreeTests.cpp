@@ -3,7 +3,29 @@
 #include "gtest/gtest.h"
 #include "BinaryTree.h"
 
-TEST(sample_test_case, sample_test)
+TEST(InsertTest, SingleInsertTest)
+{
+	auto* root = new BinaryTree(1);
+
+	std::string result = root->ToString();
+	result.erase(0, 1);
+
+	EXPECT_EQ(result, "1");
+}
+
+TEST(InsertTest, BasicInsertTest)
+{
+	auto* root = new BinaryTree(1);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(3));
+
+	std::string result = root->ToString();
+	result.erase(0, 1);
+
+	EXPECT_EQ(result, "1,2,3");
+}
+
+TEST(InsertTest, InsertMultipleSameKeyTest)
 {
 	auto* root = new BinaryTree(2);
 	root->Insert(new BinaryTree(3));
