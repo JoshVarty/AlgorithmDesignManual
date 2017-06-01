@@ -9,7 +9,7 @@ public:
 	BinaryTree *right = nullptr;
 
 	BinaryTree * SearchTree(BinaryTree * tree, int searchValue);
-	BinaryTree * FindMinimum(BinaryTree * tree);
+	BinaryTree * FindMinimum();
 	BinaryTree(int item);
 	std::string ToString();
 	void Insert(BinaryTree * node);

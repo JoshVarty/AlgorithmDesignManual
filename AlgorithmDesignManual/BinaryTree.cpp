@@ -6,6 +6,15 @@ BinaryTree::BinaryTree(int item) {
 	this->item = item;
 }
 
+
+BinaryTree * BinaryTree::FindMinimum() {
+	if (this->left == nullptr) {
+		return this;
+	}
+
+	return this->left->FindMinimum();
+}
+
 void BinaryTree::Insert(BinaryTree * newNode) {
 	
 	if (this->item < newNode->item) {
@@ -44,3 +53,4 @@ std::string BinaryTree::ToString() {
 
 	return result;
 }
+
