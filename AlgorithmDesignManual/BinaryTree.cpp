@@ -6,6 +6,21 @@ BinaryTree::BinaryTree(int item) {
 	this->item = item;
 }
 
+BinaryTree * BinaryTree::SearchTree(int searchValue) {
+	if (searchValue == this->item)
+	{
+		return this;
+	}
+
+	if (searchValue > this->item && this->right != nullptr) {
+		return this->right->SearchTree(searchValue);
+	}
+	else if (searchValue < this->item && this->left != nullptr) {
+		return this->left->SearchTree(searchValue);
+	}
+
+	return nullptr;
+}
 
 BinaryTree * BinaryTree::FindMinimum() {
 	if (this->left == nullptr) {

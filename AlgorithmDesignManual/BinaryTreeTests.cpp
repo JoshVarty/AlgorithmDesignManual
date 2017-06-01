@@ -3,6 +3,9 @@
 #include "gtest/gtest.h"
 #include "BinaryTree.h"
 
+
+#pragma region InsertTests
+
 TEST(InsertTest, SingleInsertTest)
 {
 	auto* root = new BinaryTree(1);
@@ -57,6 +60,10 @@ TEST(InsertTest, InsertMultipleSameKeyTest)
 	EXPECT_EQ(result, "1,1,1,2,3");
 }
 
+#pragma endregion
+
+#pragma region FindTests
+
 TEST(FindTest, FindAfterInesrtInOrder)
 {
 	auto* root = new BinaryTree(1);
@@ -77,7 +84,7 @@ TEST(FindTest, FindAfterInesrtInReverseOrder)
 	EXPECT_EQ(min->item, 1);
 }
 
-TEST(InsertTest, FindAfterInsertAllIdentical)
+TEST(FindTest, FindAfterInsertAllIdentical)
 {
 	auto* root = new BinaryTree(1);
 	root->Insert(new BinaryTree(1));
@@ -88,6 +95,65 @@ TEST(InsertTest, FindAfterInsertAllIdentical)
 	auto* min = root->FindMinimum();
 	EXPECT_EQ(min->item, 1);
 }
+
+#pragma endregion
+
+#pragma region SearchTests
+
+TEST(SearchTest, BasicSearch)
+{
+	auto* root = new BinaryTree(1);
+	auto* searchItem = root->SearchTree(1);
+
+	EXPECT_EQ(searchItem->item, 1);
+}
+
+TEST(SearchTest, SearchNotInTree)
+{
+	auto* root = new BinaryTree(1);
+	auto* searchItem = root->SearchTree(2);
+
+	EXPECT_EQ(searchItem, nullptr);
+}
+
+TEST(SearchTest, SearchThreeItems)
+{
+	auto* root = new BinaryTree(1);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(3));
+
+	auto* searchItem = root->SearchTree(1);
+	EXPECT_EQ(searchItem->item, 1);
+	searchItem = root->SearchTree(2);
+	EXPECT_EQ(searchItem->item, 2);
+	searchItem = root->SearchTree(3);
+	EXPECT_EQ(searchItem->item, 3);
+}
+
+TEST(SearchTest, SearchOneHundredItems)
+{
+	auto* root = new BinaryTree(1);
+
+	for (int i = 2; i < 100; i++) {
+		root->Insert(new BinaryTree(i));
+	}
+
+	for (int i = 1; i < 100; i++) {
+		auto* searchItem = root->SearchTree(i);
+		EXPECT_EQ(searchItem->item, i);
+	}
+
+	auto* searchItem = root->SearchTree(1);
+	EXPECT_EQ(searchItem->item, 1);
+	searchItem = root->SearchTree(2);
+	EXPECT_EQ(searchItem->item, 2);
+	searchItem = root->SearchTree(3);
+	EXPECT_EQ(searchItem->item, 3);
+}
+
+
+#pragma endregion
+
 
 int main(int argc, char** argv)
 {
