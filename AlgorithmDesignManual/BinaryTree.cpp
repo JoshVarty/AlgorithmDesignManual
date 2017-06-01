@@ -33,10 +33,10 @@ std::string BinaryTree::ToString() {
 	std::string result = "";
 
 	if (this->left != nullptr) {
-		result =  result + this->left->ToString();
+		result = result + this->left->ToString();
 	}
 
-	result = result + std::to_string(this->item);
+	result = result + "," + std::to_string(this->item);
 
 	if (this->right != nullptr) {
 		result = result + this->right->ToString();
