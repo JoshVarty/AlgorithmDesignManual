@@ -15,3 +15,16 @@ void LinkedList::Insert(int item) {
 	newNode->prev = iterator;
 	iterator->next = newNode;
 }
+
+std::string LinkedList::ToString() {
+	
+	auto* iterator = this;
+	std::string result = std::to_string(iterator->item);
+
+	while (iterator->next != nullptr) {
+		iterator = iterator->next;
+		result = result + "," + std::to_string(iterator->item);
+	}
+
+	return result;
+}

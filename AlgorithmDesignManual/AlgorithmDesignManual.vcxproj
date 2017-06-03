@@ -146,6 +146,7 @@
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="BinaryTreeTests.cpp" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="LinkedListTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
