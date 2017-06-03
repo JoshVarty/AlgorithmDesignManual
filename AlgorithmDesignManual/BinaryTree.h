@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "LinkedList.h"
 
 class BinaryTree {
 public:
@@ -12,7 +13,7 @@ public:
 	BinaryTree * SearchTree(int searchValue);
 	BinaryTree * FindMinimum();
 	void Insert(BinaryTree * node);
-
 	bool IsIdentical(BinaryTree * otherRoot);
+	LinkedList ToLinkedList();
 	std::string ToString();
 };
