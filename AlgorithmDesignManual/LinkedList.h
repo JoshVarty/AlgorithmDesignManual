@@ -1,3 +1,5 @@
+#pragma once
+#include <string>
 
 class LinkedList {
 public:
@@ -5,4 +7,8 @@ public:
 	LinkedList *next = nullptr;
 	LinkedList *prev = nullptr;
 	LinkedList(int item);
+	void Insert(int item);
+	void Delete(int item);
+
+	std::string ToString();
 };
