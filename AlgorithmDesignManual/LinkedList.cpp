@@ -4,16 +4,14 @@ LinkedList::LinkedList(int item) {
 	this->item = item;
 }
 
-void LinkedList::Insert(int item) {
+void LinkedList::Insert(LinkedList* item) {
 
 	auto* iterator = this;
 	while (iterator->next != nullptr) {
 		iterator = iterator->next;
 	}
-
-	auto* newNode = new LinkedList(item);
-	newNode->prev = iterator;
-	iterator->next = newNode;
+	item->prev = iterator;
+	iterator->next = item;
 }
 
 std::string LinkedList::ToString() {

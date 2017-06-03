@@ -7,8 +7,8 @@ public:
 	LinkedList *next = nullptr;
 	LinkedList *prev = nullptr;
 	LinkedList(int item);
-	void Insert(int item);
+	void Insert(LinkedList* item);
 	void Delete(int item);
-
+	LinkedList ToLinkedList();
 	std::string ToString();
 };

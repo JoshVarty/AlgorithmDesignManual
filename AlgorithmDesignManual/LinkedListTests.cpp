@@ -16,7 +16,7 @@ TEST(InsertTests, BasicConstructionTest)
 TEST(InsertTests, SingleInsertTest)
 {
 	auto* node = new LinkedList(1);
-	node->Insert(2);
+	node->Insert(new LinkedList(2));
 
 	std::string result = node->ToString();
 	EXPECT_EQ(result, "1,2");
@@ -25,10 +25,10 @@ TEST(InsertTests, SingleInsertTest)
 TEST(InsertTests, MultipleInsertTest)
 {
 	auto* node = new LinkedList(1);
-	node->Insert(2);
-	node->Insert(3);
-	node->Insert(4);
-	node->Insert(5);
+	node->Insert(new LinkedList(2));
+	node->Insert(new LinkedList(3));
+	node->Insert(new LinkedList(4));
+	node->Insert(new LinkedList(5));
 
 	std::string result = node->ToString();
 	EXPECT_EQ(result, "1,2,3,4,5");
