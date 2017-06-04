@@ -218,6 +218,54 @@ TEST(IdenticalTests, NotIdenticalTest_DifferentOrder)
 
 #pragma endregion
 
+#pragma region ToLinkedListTests
+
+TEST(LinkedListTests, SingleItem)
+{
+	auto* root = new BinaryTree(3);
+	auto* list = root->ToLinkedList();
+	EXPECT_EQ(root->ToString(), list->ToString());
+}
+
+TEST(LinkedListTests, InsertTwoItems)
+{
+	auto* root = new BinaryTree(3);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(1));
+
+	auto* list = root->ToLinkedList();
+	EXPECT_EQ(root->ToString(), list->ToString());
+}
+
+TEST(LinkedListTests, InsertTwoItemsDifferentOrder)
+{
+	auto* root = new BinaryTree(2);
+	root->Insert(new BinaryTree(3));
+	root->Insert(new BinaryTree(1));
+
+	auto* list = root->ToLinkedList();
+	EXPECT_EQ(root->ToString(), list->ToString());
+}
+
+
+TEST(LinkedListTests, InsertManyItems)
+{
+	auto* root = new BinaryTree(3);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(1));
+	root->Insert(new BinaryTree(8));
+	root->Insert(new BinaryTree(9));
+	root->Insert(new BinaryTree(3));
+	root->Insert(new BinaryTree(4));
+	root->Insert(new BinaryTree(10));
+	root->Insert(new BinaryTree(4));
+
+	auto* list = root->ToLinkedList();
+	EXPECT_EQ(root->ToString(), list->ToString());
+}
+
+#pragma endregion
+
 
 int main(int argc, char** argv)
 {
