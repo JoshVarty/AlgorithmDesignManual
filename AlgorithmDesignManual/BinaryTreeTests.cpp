@@ -11,8 +11,6 @@ TEST(InsertTest, SingleInsertTest)
 	auto* root = new BinaryTree(1);
 
 	std::string result = root->ToString();
-	result.erase(0, 1);
-
 	EXPECT_EQ(result, "1");
 }
 
@@ -23,8 +21,6 @@ TEST(InsertTest, BasicInsertTest)
 	root->Insert(new BinaryTree(3));
 
 	std::string result = root->ToString();
-	result.erase(0, 1);
-
 	EXPECT_EQ(result, "1,2,3");
 }
 
@@ -41,8 +37,6 @@ TEST(InsertTest, MoreInserts)
 	root->Insert(new BinaryTree(5));
 
 	std::string result = root->ToString();
-	result.erase(0, 1);
-
 	EXPECT_EQ(result, "1,2,3,4,5,6,7,8,9");
 }
 
@@ -55,8 +49,6 @@ TEST(InsertTest, InsertMultipleSameKeyTest)
 	root->Insert(new BinaryTree(1));
 
 	std::string result = root->ToString();
-	result.erase(0, 1);
-
 	EXPECT_EQ(result, "1,1,1,2,3");
 }
 

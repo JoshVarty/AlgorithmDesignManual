@@ -83,17 +83,38 @@ bool BinaryTree::IsIdentical(BinaryTree * otherRoot) {
 	return leftEqual & rightEqual;
 }
 
-std::string BinaryTree::ToString() {
-	std::string result = "";
+LinkedList* BinaryTree::ToLinkedList() {
+
+	LinkedList* node = new LinkedList(this->item);
+	LinkedList* head = node;
 
 	if (this->left != nullptr) {
-		result = result + this->left->ToString();
+		head = this->left->ToLinkedList();
+		head->Insert(node);
 	}
 
-	result = result + "," + std::to_string(this->item);
+	if (this->right != nullptr) {
+		head->Insert(this->right->ToLinkedList());
+	}
+
+	return head;
+}
+
+std::string BinaryTree::ToString() {
+	std::string result = std::to_string(this->item);
+
+	if (this->left != nullptr) {
+		std::string left = this->left->ToString();
+		if (!left.empty()) {
+			result = left + "," + result;
+		}
+	}
 
 	if (this->right != nullptr) {
-		result = result + this->right->ToString();
+		std::string right = this->right->ToString();
+		if (!right.empty()) {
+			result = result + "," + right;
+		}
 	}
 
 	return result;
