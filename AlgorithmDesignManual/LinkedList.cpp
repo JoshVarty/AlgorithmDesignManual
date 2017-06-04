@@ -26,3 +26,16 @@ std::string LinkedList::ToString() {
 
 	return result;
 }
+
+LinkedList * LinkedList::ReverseRecursion() {
+	
+	auto* tempNext = this->next;
+	this->next = this->prev;
+	this->prev = tempNext;
+	
+	if (tempNext != nullptr) {
+		return tempNext->ReverseRecursion();
+	}
+
+	return this;
+}

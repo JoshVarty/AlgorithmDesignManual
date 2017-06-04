@@ -247,7 +247,6 @@ TEST(LinkedListTests, InsertTwoItemsDifferentOrder)
 	EXPECT_EQ(root->ToString(), list->ToString());
 }
 
-
 TEST(LinkedListTests, InsertManyItems)
 {
 	auto* root = new BinaryTree(3);
@@ -265,7 +264,6 @@ TEST(LinkedListTests, InsertManyItems)
 }
 
 #pragma endregion
-
 
 int main(int argc, char** argv)
 {

@@ -8,6 +8,8 @@ public:
 	LinkedList *prev = nullptr;
 	LinkedList(int item);
 	void Insert(LinkedList* item);
+	LinkedList* ReverseRecursion();
+	LinkedList* ReverseNoRecursion();
 	void Delete(int item);
 	std::string ToString();
 };
