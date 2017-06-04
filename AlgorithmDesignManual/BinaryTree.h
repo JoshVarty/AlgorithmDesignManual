@@ -14,6 +14,6 @@ public:
 	BinaryTree * FindMinimum();
 	void Insert(BinaryTree * node);
 	bool IsIdentical(BinaryTree * otherRoot);
-	LinkedList ToLinkedList();
+	LinkedList* ToLinkedList();
 	std::string ToString();
 };

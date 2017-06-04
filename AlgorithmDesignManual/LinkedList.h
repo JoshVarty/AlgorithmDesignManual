@@ -9,6 +9,5 @@ public:
 	LinkedList(int item);
 	void Insert(LinkedList* item);
 	void Delete(int item);
-	LinkedList ToLinkedList();
 	std::string ToString();
 };
