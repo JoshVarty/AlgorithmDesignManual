@@ -42,13 +42,17 @@ LinkedList * LinkedList::ReverseRecursion() {
 
 LinkedList * LinkedList::ReverseNoRecursion() {
 
-	LinkedList* tempNext = this;
+	LinkedList* lastItem = this;
+	auto* currentItem = this;
 
-	while (this->next != nullptr) {
-		tempNext = this->next;
-		this->next = this->prev;
-		this->prev = tempNext;
+	while (currentItem != nullptr) {
+		//iterate
+		lastItem = currentItem;
+		currentItem = lastItem->next;
+		//adjust pointers
+		lastItem->next = lastItem->prev;
+		lastItem->prev = currentItem;
 	}
 	
-	return tempNext;
+	return lastItem;
 }
