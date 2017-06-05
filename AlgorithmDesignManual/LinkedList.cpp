@@ -39,3 +39,16 @@ LinkedList * LinkedList::ReverseRecursion() {
 
 	return this;
 }
+
+LinkedList * LinkedList::ReverseNoRecursion() {
+
+	LinkedList* tempNext = this;
+
+	while (this->next != nullptr) {
+		tempNext = this->next;
+		this->next = this->prev;
+		this->prev = tempNext;
+	}
+	
+	return tempNext;
+}
