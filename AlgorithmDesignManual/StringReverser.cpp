@@ -10,4 +10,6 @@ std::string StringReverser::Reverse(std::string input) {
 		input[length - i] = temp;
 	}
 
+	return input;
+
 }

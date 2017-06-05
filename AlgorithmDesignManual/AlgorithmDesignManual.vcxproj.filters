@@ -44,7 +44,7 @@
     <ClInclude Include="StringReverser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StringReverserTests.h">
+    <ClInclude Include="StringReverserTests.cpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

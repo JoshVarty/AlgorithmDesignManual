@@ -3,7 +3,6 @@
 #include "gtest/gtest.h"
 #include "BinaryTree.h"
 
-
 #pragma region InsertTests
 
 TEST(InsertTest, SingleInsertTest)
