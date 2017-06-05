@@ -147,6 +147,7 @@
     <ClCompile Include="BinaryTreeTests.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListTests.cpp" />
+    <ClCompile Include="StringReverser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -154,6 +155,8 @@
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="StringReverser.h" />
+    <ClInclude Include="StringReverserTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
