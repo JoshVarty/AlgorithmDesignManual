@@ -30,6 +30,9 @@
     <ClCompile Include="StringReverser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StringReverserTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -43,9 +46,6 @@
     </ClInclude>
     <ClInclude Include="StringReverser.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StringReverserTests.cpp">
-      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
