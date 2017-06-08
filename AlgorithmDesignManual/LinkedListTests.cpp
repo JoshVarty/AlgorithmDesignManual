@@ -138,3 +138,50 @@ TEST(InsertTests, ReverseNoRecursionMultipleInsertTest)
 
 #pragma endregion
 
+#pragma region CycleDetectionTests
+
+
+TEST(CycleDetectionTests, NoCycleOneNode)
+{
+	auto* node = new LinkedList(1);
+
+	auto* cycle = node->FindNodeInCycle();
+	EXPECT_EQ(cycle, nullptr);
+}
+
+TEST(CycleDetectionTests, NoCycleTwoNodes)
+{
+	auto* node = new LinkedList(1);
+	node->Insert(new LinkedList(2));
+
+	auto* cycle = node->FindNodeInCycle();
+	EXPECT_EQ(cycle, nullptr);
+}
+
+TEST(CycleDetectionTests, NoCycleThreeNodes)
+{
+	auto* node = new LinkedList(1);
+	node->Insert(new LinkedList(2));
+	node->Insert(new LinkedList(3));
+
+	auto* cycle = node->FindNodeInCycle();
+	EXPECT_EQ(cycle, nullptr);
+}
+
+TEST(CycleDetectionTests, NoCycleTenNodes)
+{
+	auto* node = new LinkedList(1);
+	node->Insert(new LinkedList(2));
+	node->Insert(new LinkedList(3));
+	node->Insert(new LinkedList(4));
+	node->Insert(new LinkedList(5));
+	node->Insert(new LinkedList(6));
+	node->Insert(new LinkedList(7));
+	node->Insert(new LinkedList(8));
+	node->Insert(new LinkedList(9));
+	node->Insert(new LinkedList(10));
+
+	auto* reversed = node->FindNodeInCycle();
+}
+#pragma endregion
+
