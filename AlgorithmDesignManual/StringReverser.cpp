@@ -16,19 +16,19 @@ std::string StringReverser::Reverse(std::string input) {
 	while (i < length)
 	{
 		int j;
-		for (j = i; j < length - 1; j++) {
+		for (j = i; j < length; j++) {
 			if (input[j] == ' ') {
 				break;
 			}
 		}
-
-		for (int k = 0; k <= j / 2; k++) {
+		
+		for (int k = 0; k < (j - i) / 2; k++) {
 			char temp = input[i + k];
-			input[i + k] = input[j - k];
-			input[j - k] = temp;
+			input[i + k] = input[j - k - 1];
+			input[j - k - 1] = temp;
 		}
 
-		i = i + j + 1;
+		i = i + (j - i) + 1;
 	}
 
 	return input;

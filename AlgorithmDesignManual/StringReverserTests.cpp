@@ -13,4 +13,11 @@ TEST(StringReverserTests, OneWordString)
 	EXPECT_EQ(result, "Josh");
 }
 
+TEST(StringReverserTests, ThreeWordString)
+{
+	std::string input = "Josh is testing";
+	std::string result = StringReverser::Reverse(input);
+
+	EXPECT_EQ(result, "testing is Josh");
+}
 #pragma endregion
