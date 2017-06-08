@@ -56,3 +56,20 @@ LinkedList * LinkedList::ReverseNoRecursion() {
 	
 	return lastItem;
 }
+
+LinkedList * LinkedList::FindNodeInCycle() {
+	LinkedList * fast = this;
+	LinkedList * slow = this;
+
+	while (fast->next != nullptr && fast->next->next != nullptr) {
+		fast = fast->next->next;
+		slow = slow->next;
+
+		if (fast == slow)
+		{
+			return fast;
+		}
+	}
+
+	return nullptr;
+}

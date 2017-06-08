@@ -11,5 +11,6 @@ public:
 	LinkedList* ReverseRecursion();
 	LinkedList* ReverseNoRecursion();
 	void Delete(int item);
+	LinkedList* FindNodeInCycle();
 	std::string ToString();
 };
