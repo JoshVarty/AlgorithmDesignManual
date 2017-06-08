@@ -12,6 +12,24 @@ std::string StringReverser::Reverse(std::string input) {
 	}
 
 	//Secondly, reverse every word in the string
+	int i = 0; 
+	while (i < length)
+	{
+		int j;
+		for (j = i; j < length - 1; j++) {
+			if (input[j] == ' ') {
+				break;
+			}
+		}
+
+		for (int k = 0; k <= j / 2; k++) {
+			char temp = input[i + k];
+			input[i + k] = input[j - k];
+			input[j - k] = temp;
+		}
+
+		i = i + j + 1;
+	}
 
 	return input;
 }
