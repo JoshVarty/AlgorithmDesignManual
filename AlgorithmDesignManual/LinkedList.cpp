@@ -57,7 +57,7 @@ LinkedList * LinkedList::ReverseNoRecursion() {
 	return lastItem;
 }
 
-LinkedList * LinkedList::FindNodeInCycle() {
+bool LinkedList::ContainsCycle() {
 	LinkedList * fast = this;
 	LinkedList * slow = this;
 
@@ -67,9 +67,9 @@ LinkedList * LinkedList::FindNodeInCycle() {
 
 		if (fast == slow)
 		{
-			return fast;
+			return true;
 		}
 	}
 
-	return nullptr;
+	return false;
 }

@@ -145,8 +145,8 @@ TEST(CycleDetectionTests, NoCycleOneNode)
 {
 	auto* node = new LinkedList(1);
 
-	auto* cycle = node->FindNodeInCycle();
-	EXPECT_EQ(cycle, nullptr);
+	bool hasCycle = node->ContainsCycle();
+	EXPECT_FALSE(hasCycle);
 }
 
 TEST(CycleDetectionTests, NoCycleTwoNodes)
@@ -154,8 +154,8 @@ TEST(CycleDetectionTests, NoCycleTwoNodes)
 	auto* node = new LinkedList(1);
 	node->Insert(new LinkedList(2));
 
-	auto* cycle = node->FindNodeInCycle();
-	EXPECT_EQ(cycle, nullptr);
+	bool hasCycle = node->ContainsCycle();
+	EXPECT_FALSE(hasCycle);
 }
 
 TEST(CycleDetectionTests, NoCycleThreeNodes)
@@ -164,8 +164,8 @@ TEST(CycleDetectionTests, NoCycleThreeNodes)
 	node->Insert(new LinkedList(2));
 	node->Insert(new LinkedList(3));
 
-	auto* cycle = node->FindNodeInCycle();
-	EXPECT_EQ(cycle, nullptr);
+	bool hasCycle = node->ContainsCycle();
+	EXPECT_FALSE(hasCycle);
 }
 
 TEST(CycleDetectionTests, NoCycleTenNodes)
@@ -181,7 +181,44 @@ TEST(CycleDetectionTests, NoCycleTenNodes)
 	node->Insert(new LinkedList(9));
 	node->Insert(new LinkedList(10));
 
-	auto* reversed = node->FindNodeInCycle();
+	bool hasCycle = node->ContainsCycle();
+	EXPECT_FALSE(hasCycle);
 }
+
+TEST(CycleDetectionTests, CycleTwoNodes)
+{
+	auto* node = new LinkedList(1);
+	node->Insert(node);
+
+	bool hasCycle = node->ContainsCycle();
+	EXPECT_TRUE(hasCycle);
+}
+
+TEST(CycleDetectionTests, CycleThreeNodes)
+{
+	auto* node = new LinkedList(1);
+	node->Insert(new LinkedList(2));
+	node->Insert(node);
+
+	bool hasCycle = node->ContainsCycle();
+	EXPECT_TRUE(hasCycle);
+}
+
+TEST(CycleDetectionTests, CycleTenNodes)
+{
+	auto* node = new LinkedList(1);
+	node->Insert(new LinkedList(2));
+	node->Insert(new LinkedList(3));
+	node->Insert(new LinkedList(4));
+	node->Insert(new LinkedList(6));
+	node->Insert(new LinkedList(7));
+	node->Insert(new LinkedList(8));
+	node->Insert(new LinkedList(9));
+	node->Insert(node);
+
+	bool hasCycle = node->ContainsCycle();
+	EXPECT_TRUE(hasCycle);
+}
+
 #pragma endregion
 
