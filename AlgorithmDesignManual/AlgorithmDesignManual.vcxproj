@@ -143,6 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayShifter.cpp" />
+    <ClCompile Include="ArrayShifterTests.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="BinaryTreeTests.cpp" />
     <ClCompile Include="StringReverserTests.cpp" />
@@ -154,6 +156,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayShifter.h" />
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="StringReverser.h" />
