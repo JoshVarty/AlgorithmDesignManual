@@ -4,5 +4,5 @@
 
 class ArrayShifter {
 public:
-	static std::vector<int> Shift(std::vector<int> input, int size, int numShifts);
+	static std::vector<int> Shift(std::vector<int> input, int numShifts);
 };

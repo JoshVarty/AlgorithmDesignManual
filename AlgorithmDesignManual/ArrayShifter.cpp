@@ -1,6 +1,6 @@
 #include "ArrayShifter.h"
 
 
-std::vector<int> ArrayShifter::Shift(std::vector<int> input, int n, int k) {
+std::vector<int> ArrayShifter::Shift(std::vector<int> input, int k) {
 	return input;
 }
