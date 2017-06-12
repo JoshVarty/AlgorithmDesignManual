@@ -3,14 +3,21 @@
 
 std::vector<int> ArrayShifter::Shift(std::vector<int> input, int numShifts) {
 
-	for (int j = 0; j < numShifts; j++) {
+	int size = input.size();
+	numShifts = numShifts % size;
 
-		int last = input[0];
-		for (int i = input.size() - 1; i >= 0; i--) {
-			int temp = input[i];
-			input[i] = last;
-			last = temp;
-		}
+	std::vector<int> temp(numShifts);
+	for (int i = 0; i < numShifts; i++) {
+		temp[i] = input[i];
 	}
+
+	for (int i = 0; i < size - numShifts; i++) {
+		input[i] = input[i + numShifts];
+	}
+
+	for (int i = 0; i < numShifts; i++) {
+		input[size - numShifts + i] = temp[i];
+	}
+
 	return input;
 }
