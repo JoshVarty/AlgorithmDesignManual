@@ -294,7 +294,6 @@ TEST(IsValidBinaryTreeTests, ValidTreeTenItems)
 	root->Insert(new BinaryTree(3));
 	root->Insert(new BinaryTree(4));
 	root->Insert(new BinaryTree(10));
-	root->Insert(new BinaryTree(4));
 
 	bool isValidBinaryTree = root->IsValidBinaryTree();
 	EXPECT_TRUE(isValidBinaryTree);
@@ -349,6 +348,19 @@ TEST(IsValidBinaryTreeTests, BadTreeTenItems2)
 	auto node = new BinaryTree(4);
 	root->Insert(node);
 	node->left = new BinaryTree(10);
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_FALSE(isValidBinaryTree);
+}
+
+
+TEST(IsValidBinaryTreeTests, BadTreeDuplicateItems)
+{
+	auto* root = new BinaryTree(3);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(1));
+	root->Insert(new BinaryTree(10));
 
 	bool isValidBinaryTree = root->IsValidBinaryTree();
 	EXPECT_FALSE(isValidBinaryTree);

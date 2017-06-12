@@ -106,7 +106,7 @@ bool BinaryTree::IsValidBinaryTree() {
 	bool validRight = true;
 
 	if (this->left != nullptr) {
-		if (this->left->item > this->item) {
+		if (this->left->item >= this->item) {
 			return false;
 		}
 
@@ -114,7 +114,7 @@ bool BinaryTree::IsValidBinaryTree() {
 	}
 
 	if (this->right != nullptr) {
-		if (this->right->item < this->item) {
+		if (this->right->item <= this->item) {
 			return false;
 		}
 
