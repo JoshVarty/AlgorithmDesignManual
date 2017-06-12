@@ -100,28 +100,30 @@ LinkedList* BinaryTree::ToLinkedList() {
 	return head;
 }
 
-bool BinaryTree::IsValidBinaryTree() {
 
+bool BinaryTree::IsValidBinaryTree(int lowerBound, int upperBound) {
+	
 	bool validLeft = true;
 	bool validRight = true;
 
-	if (this->left != nullptr) {
-		if (this->left->item >= this->item) {
-			return false;
-		}
+	if (this->item <= lowerBound || this->item >= upperBound) {
+		return false;
+	}
 
-		validLeft = this->left->IsValidBinaryTree();
+	if (this->left != nullptr) {
+		validLeft = this->left->IsValidBinaryTree(lowerBound, this->item);
 	}
 
 	if (this->right != nullptr) {
-		if (this->right->item <= this->item) {
-			return false;
-		}
-
-		validRight = this->right->IsValidBinaryTree();
+		validRight = this->right->IsValidBinaryTree(this->item, upperBound);
 	}
 
 	return validLeft & validRight;
+
+}
+
+bool BinaryTree::IsValidBinaryTree() {
+	return IsValidBinaryTree(INT_MIN, INT_MAX);
 }
 
 std::string BinaryTree::ToString() {

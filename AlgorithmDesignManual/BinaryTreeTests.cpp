@@ -291,7 +291,6 @@ TEST(IsValidBinaryTreeTests, ValidTreeTenItems)
 	root->Insert(new BinaryTree(1));
 	root->Insert(new BinaryTree(8));
 	root->Insert(new BinaryTree(9));
-	root->Insert(new BinaryTree(3));
 	root->Insert(new BinaryTree(4));
 	root->Insert(new BinaryTree(10));
 
@@ -365,6 +364,30 @@ TEST(IsValidBinaryTreeTests, BadTreeDuplicateItems)
 	bool isValidBinaryTree = root->IsValidBinaryTree();
 	EXPECT_FALSE(isValidBinaryTree);
 }
+
+TEST(IsValidBinaryTreeTests, BadTreeBadItems)
+{
+	auto* root1 = new BinaryTree(1);
+	auto* root2 = new BinaryTree(2);
+	auto* root3 = new BinaryTree(3);
+	auto* root4 = new BinaryTree(4);
+	auto* root5 = new BinaryTree(5);
+	auto* root6 = new BinaryTree(6);
+	auto* root7 = new BinaryTree(7);
+
+	root3->left = root2;
+	root3->left = root6;
+
+	root2->left = root1;
+	root2->right = root4;
+	
+	root6->left = root5;
+	root6->right = root7;
+
+	bool isValidBinaryTree = root3->IsValidBinaryTree();
+	EXPECT_FALSE(isValidBinaryTree);
+}
+
 
 #pragma endregion
 
