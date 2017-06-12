@@ -100,6 +100,10 @@ LinkedList* BinaryTree::ToLinkedList() {
 	return head;
 }
 
+bool BinaryTree::IsValidBinaryTree() {
+	return false;
+}
+
 std::string BinaryTree::ToString() {
 	std::string result = std::to_string(this->item);
 

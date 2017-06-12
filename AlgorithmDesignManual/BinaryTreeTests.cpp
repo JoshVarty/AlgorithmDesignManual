@@ -264,6 +264,99 @@ TEST(LinkedListTests, InsertManyItems)
 
 #pragma endregion
 
+#pragma region IsValidBinaryTreeTests
+
+TEST(IsValidBinaryTreeTests, ValidTreeOneItem)
+{
+	auto* root = new BinaryTree(3);
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_TRUE(isValidBinaryTree);
+}
+
+TEST(IsValidBinaryTreeTests, ValidTreeThreeItems)
+{
+	auto* root = new BinaryTree(3);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(1));
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_TRUE(isValidBinaryTree);
+}
+
+TEST(IsValidBinaryTreeTests, ValidTreeTenItems)
+{
+	auto* root = new BinaryTree(3);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(1));
+	root->Insert(new BinaryTree(8));
+	root->Insert(new BinaryTree(9));
+	root->Insert(new BinaryTree(3));
+	root->Insert(new BinaryTree(4));
+	root->Insert(new BinaryTree(10));
+	root->Insert(new BinaryTree(4));
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_TRUE(isValidBinaryTree);
+}
+
+TEST(IsValidBinaryTreeTests, BadTreeTwoItems)
+{
+	auto* root = new BinaryTree(1);
+	root->left = new BinaryTree(2);
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_FALSE(isValidBinaryTree);
+}
+
+TEST(IsValidBinaryTreeTests, BadTreeTwoItems2)
+{
+	auto* root = new BinaryTree(2);
+	root->right = new BinaryTree(1);
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_FALSE(isValidBinaryTree);
+}
+
+TEST(IsValidBinaryTreeTests, BadTreeTenItems)
+{
+	auto* root = new BinaryTree(3);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(1));
+	root->Insert(new BinaryTree(8));
+	root->Insert(new BinaryTree(9));
+	root->Insert(new BinaryTree(3));
+	root->Insert(new BinaryTree(4));
+	root->Insert(new BinaryTree(10));
+	auto node = new BinaryTree(4);
+	root->Insert(node);
+	node->right = new BinaryTree(1);
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_FALSE(isValidBinaryTree);
+}
+
+TEST(IsValidBinaryTreeTests, BadTreeTenItems2)
+{
+	auto* root = new BinaryTree(3);
+	root->Insert(new BinaryTree(2));
+	root->Insert(new BinaryTree(1));
+	root->Insert(new BinaryTree(8));
+	root->Insert(new BinaryTree(9));
+	root->Insert(new BinaryTree(3));
+	root->Insert(new BinaryTree(4));
+	root->Insert(new BinaryTree(10));
+	auto node = new BinaryTree(4);
+	root->Insert(node);
+	node->left = new BinaryTree(10);
+
+	bool isValidBinaryTree = root->IsValidBinaryTree();
+	EXPECT_FALSE(isValidBinaryTree);
+}
+
+#pragma endregion
+
+
 int main(int argc, char** argv)
 {
 	testing::InitGoogleTest(&argc, argv);

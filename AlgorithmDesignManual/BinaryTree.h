@@ -15,5 +15,6 @@ public:
 	void Insert(BinaryTree * node);
 	bool IsIdentical(BinaryTree * otherRoot);
 	LinkedList* ToLinkedList();
+	bool IsValidBinaryTree();
 	std::string ToString();
 };
