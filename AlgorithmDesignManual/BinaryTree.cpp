@@ -101,7 +101,27 @@ LinkedList* BinaryTree::ToLinkedList() {
 }
 
 bool BinaryTree::IsValidBinaryTree() {
-	return false;
+
+	bool validLeft = true;
+	bool validRight = true;
+
+	if (this->left != nullptr) {
+		if (this->left->item > this->item) {
+			return false;
+		}
+
+		validLeft = this->left->IsValidBinaryTree();
+	}
+
+	if (this->right != nullptr) {
+		if (this->right->item < this->item) {
+			return false;
+		}
+
+		validRight = this->right->IsValidBinaryTree();
+	}
+
+	return validLeft & validRight;
 }
 
 std::string BinaryTree::ToString() {
