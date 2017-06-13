@@ -31,7 +31,7 @@ int Trie::Find(string input) {
 	
 	if (this->characters[index] != nullptr) {
 		std::string remainder = input.substr(1, input.length() - 1);
-		this->characters[index]->Find(remainder);
+		return this->characters[index]->Find(remainder);
 	}
 	else {
 		return 0;
