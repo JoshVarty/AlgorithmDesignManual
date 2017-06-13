@@ -8,7 +8,7 @@
 TEST(TrieTests, EmptyTrie)
 {
 	auto *trie = new Trie();
-	auto result = trie->Find("Josh");
+	auto result = trie->Find("josh");
 
 	EXPECT_EQ(result, 0);
 }
@@ -16,9 +16,9 @@ TEST(TrieTests, EmptyTrie)
 TEST(TrieTests, OneItemPerfectMatch)
 {
 	auto *trie = new Trie();
-	trie->Add("Josh");
+	trie->Add("josh");
 
-	auto result = trie->Find("Josh");
+	auto result = trie->Find("josh");
 
 	EXPECT_EQ(result, 1);
 }
@@ -26,9 +26,9 @@ TEST(TrieTests, OneItemPerfectMatch)
 TEST(TrieTests, OneItemImperfectMatch)
 {
 	auto *trie = new Trie();
-	trie->Add("Josh");
+	trie->Add("josh");
 
-	auto result = trie->Find("J");
+	auto result = trie->Find("j");
 
 	EXPECT_EQ(result, 1);
 }
@@ -36,10 +36,10 @@ TEST(TrieTests, OneItemImperfectMatch)
 TEST(TrieTests, TwoItemsPerfectMatch)
 {
 	auto *trie = new Trie();
-	trie->Add("Josh");
+	trie->Add("josh");
 	trie->Add("Varty");
 
-	auto result = trie->Find("Josh");
+	auto result = trie->Find("josh");
 
 	EXPECT_EQ(result, 1);
 }
@@ -47,10 +47,10 @@ TEST(TrieTests, TwoItemsPerfectMatch)
 TEST(TrieTests, TwoItemsImperfectMatch)
 {
 	auto *trie = new Trie();
-	trie->Add("Josh");
-	trie->Add("Varty");
+	trie->Add("josh");
+	trie->Add("varty");
 
-	auto result = trie->Find("Var");
+	auto result = trie->Find("var");
 
 	EXPECT_EQ(result, 1);
 }
