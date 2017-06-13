@@ -37,7 +37,7 @@ TEST(TrieTests, TwoItemsPerfectMatch)
 {
 	auto *trie = new Trie();
 	trie->Add("josh");
-	trie->Add("Varty");
+	trie->Add("varty");
 
 	auto result = trie->Find("josh");
 
