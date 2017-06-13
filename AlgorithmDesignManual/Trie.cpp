@@ -16,10 +16,6 @@ void Trie::Add(string input) {
 		this->characters[index] = new Trie();
 	}
 
-	if (input.length() <= 1) {
-		return;
-	}
-
 	std::string remainder = input.substr(1, input.length() - 1);
 	this->characters[index]->Add(remainder);
 }
