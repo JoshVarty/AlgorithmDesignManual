@@ -15,7 +15,8 @@ public:
 	void Insert(BinaryTree * node);
 	bool IsIdentical(BinaryTree * otherRoot);
 	LinkedList* ToLinkedList();
-	bool IsValidBinaryTree(int lowerBound, int upperBound);
 	bool IsValidBinaryTree();
 	std::string ToString();
+private:
+	bool IsValidBinaryTree(int lowerBound, int upperBound);
 };
