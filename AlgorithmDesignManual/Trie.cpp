@@ -21,5 +21,19 @@ void Trie::Add(string input) {
 }
 
 int Trie::Find(string input) {
-	return -1;
+	
+	if (input.length() <= 0) {
+		return this->count;
+	}
+
+	char leadingChar = input[0];
+	int index = leadingChar - 'a';
+	
+	if (this->characters[index] != nullptr) {
+		std::string remainder = input.substr(1, input.length() - 1);
+		this->characters[index]->Find(remainder);
+	}
+	else {
+		return 0;
+	}
 }
