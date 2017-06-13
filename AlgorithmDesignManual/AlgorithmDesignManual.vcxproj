@@ -151,6 +151,8 @@
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListTests.cpp" />
     <ClCompile Include="StringReverser.cpp" />
+    <ClCompile Include="Trie.cpp" />
+    <ClCompile Include="TrieTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
