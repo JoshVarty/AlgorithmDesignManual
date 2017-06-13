@@ -160,6 +160,7 @@
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="StringReverser.h" />
+    <ClInclude Include="Trie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
