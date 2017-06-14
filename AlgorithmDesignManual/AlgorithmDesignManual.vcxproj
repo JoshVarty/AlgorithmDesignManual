@@ -147,6 +147,8 @@
     <ClCompile Include="ArrayShifterTests.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="BinaryTreeTests.cpp" />
+    <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="HeapTests.cpp" />
     <ClCompile Include="StringReverserTests.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListTests.cpp" />
@@ -160,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="ArrayShifter.h" />
     <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="StringReverser.h" />
     <ClInclude Include="Trie.h" />

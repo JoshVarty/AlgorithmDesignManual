@@ -45,6 +45,12 @@
     <ClCompile Include="TrieTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Heap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HeapTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -63,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Trie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
