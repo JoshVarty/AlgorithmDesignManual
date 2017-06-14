@@ -5,8 +5,9 @@ public:
 	void InsertItem(int item);
 	int GetTopItem();
 private:
-	void BubbleUp(int item);
+	void BubbleUp(int index);
 	int size = 0;
-	int items[10000];
+	const int MAX_SIZE = 10000;
+	int items[MAX_SIZE];
 };
 
