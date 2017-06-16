@@ -1,12 +1,38 @@
 #include "Heap.h"
 #include <iostream>
 
-void MinHeap::BubbleUp(int index) {
+void MinHeap::bubbleUp(int index) {
+	if (index <= 0) {
+		return;
+	}
 
+	int parentIndex = getParentIndex(index);
+
+	if (this->items[parentIndex] > this->items[index]) {
+		//Swap items
+		int temp = this->items[index];
+		this->items[index] = this->items[parentIndex];
+		this->items[parentIndex] = temp;
+		bubbleUp(parentIndex);
+	}
+}
+
+int MinHeap::getParentIndex(int index) {
+	if (index == 0) {
+		return -1; 
+	}
+
+	return (int)(index / 2);
 }
 
 int MinHeap::GetTopItem() {
-	return items[this->size - 1];
+	if (this->size <= 0)
+	{
+		std::cout << "ERROR: Heap is empty";
+		return -1;
+	}
+
+	return items[0];
 }
 
 void MinHeap::InsertItem(int item) {
@@ -16,6 +42,6 @@ void MinHeap::InsertItem(int item) {
 	}
 
 	items[this->size] = item;
-	BubbleUp(this->size);
+	bubbleUp(this->size);
 	this->size = this->size + 1;
 }
