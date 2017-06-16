@@ -19,6 +19,26 @@ void MinHeap::bubbleUp(int index) {
 	}
 }
 
+void MinHeap::bubbleDown(int index) {
+	int childIndex = getFirstChildIndex(index);
+	int minIndex = index;
+
+	for (int i = 0; i <= 1; i++) {
+		if (childIndex + i <= this->size) {
+			if (this->items[minIndex] > this->items[childIndex + i]) {
+				minIndex = childIndex + i;
+			}
+		}
+	}
+
+	if (minIndex != index) {
+		int temp = this->items[index];
+		this->items[index] = this->items[minIndex];
+		this->items[minIndex] = temp;
+		bubbleDown(minIndex);
+	}
+}
+
 int MinHeap::getParentIndex(int index) {
 	if (index == 0) {
 		return -1; 
@@ -27,14 +47,23 @@ int MinHeap::getParentIndex(int index) {
 	return (int)(index / 2);
 }
 
-int MinHeap::GetTopItem() {
+int MinHeap::getFirstChildIndex(int index) {
+	return index * 2;
+}
+
+int MinHeap::PopTopItem() {
 	if (this->size <= 0)
 	{
 		std::cout << "ERROR: Heap is empty";
 		return -1;
 	}
 
-	return items[0];
+	int min = items[0];
+	this->items[0] = this->items[this->size - 1];
+	this->size = this->size - 1;
+	this->bubbleDown(0);
+
+	return min;
 }
 
 void MinHeap::InsertItem(int item) {

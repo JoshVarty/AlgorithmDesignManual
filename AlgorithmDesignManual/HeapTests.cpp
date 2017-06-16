@@ -7,7 +7,7 @@ TEST(MinHeapTests, OneItemHeap)
 {
 	auto * heap = new MinHeap();
 	heap->InsertItem(1);
-	int result = heap->GetTopItem();
+	int result = heap->PopTopItem();
 	
 	EXPECT_EQ(result, 1);
 }
@@ -20,7 +20,7 @@ TEST(MinHeapTests, FiveItemHeap)
 	heap->InsertItem(3);
 	heap->InsertItem(4);
 	heap->InsertItem(5);
-	int result = heap->GetTopItem();
+	int result = heap->PopTopItem();
 	
 	EXPECT_EQ(result, 1);
 }
@@ -33,7 +33,7 @@ TEST(MinHeapTests, FiveItemHeapWrongOrder)
 	heap->InsertItem(3);
 	heap->InsertItem(2);
 	heap->InsertItem(1);
-	int result = heap->GetTopItem();
+	int result = heap->PopTopItem();
 	
 	EXPECT_EQ(result, 1);
 }
