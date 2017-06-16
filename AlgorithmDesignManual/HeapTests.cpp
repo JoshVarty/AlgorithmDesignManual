@@ -20,9 +20,17 @@ TEST(MinHeapTests, FiveItemHeap)
 	heap->InsertItem(3);
 	heap->InsertItem(4);
 	heap->InsertItem(5);
-	int result = heap->PopTopItem();
+	int firstMin = heap->PopTopItem();
+	int secondMin = heap->PopTopItem();
+	int thirdMin = heap->PopTopItem();
+	int fourthMin = heap->PopTopItem();
+	int fifthMin = heap->PopTopItem();
 	
-	EXPECT_EQ(result, 1);
+	EXPECT_EQ(firstMin, 1);
+	EXPECT_EQ(secondMin, 2);
+	EXPECT_EQ(thirdMin, 3);
+	EXPECT_EQ(fourthMin, 4);
+	EXPECT_EQ(fifthMin, 5);
 }
 
 TEST(MinHeapTests, FiveItemHeapWrongOrder)
@@ -33,9 +41,18 @@ TEST(MinHeapTests, FiveItemHeapWrongOrder)
 	heap->InsertItem(3);
 	heap->InsertItem(2);
 	heap->InsertItem(1);
-	int result = heap->PopTopItem();
+
+	int firstMin = heap->PopTopItem();
+	int secondMin = heap->PopTopItem();
+	int thirdMin = heap->PopTopItem();
+	int fourthMin = heap->PopTopItem();
+	int fifthMin = heap->PopTopItem();
 	
-	EXPECT_EQ(result, 1);
+	EXPECT_EQ(firstMin, 1);
+	EXPECT_EQ(secondMin, 2);
+	EXPECT_EQ(thirdMin, 3);
+	EXPECT_EQ(fourthMin, 4);
+	EXPECT_EQ(fifthMin, 5);
 }
 
 #pragma endregion
@@ -46,7 +63,7 @@ TEST(MaxHeapTests, OneItemHeap)
 {
 	auto * heap = new MaxHeap();
 	heap->InsertItem(1);
-	int result = heap->GetTopItem();
+	int result = heap->PopTopItem();
 	
 	EXPECT_EQ(result, 1);
 }
@@ -59,9 +76,17 @@ TEST(MaxHeapTests, FiveItemHeapWrongOrder)
 	heap->InsertItem(3);
 	heap->InsertItem(4);
 	heap->InsertItem(5);
-	int result = heap->GetTopItem();
+	int firstMin = heap->PopTopItem();
+	int secondMin = heap->PopTopItem();
+	int thirdMin = heap->PopTopItem();
+	int fourthMin = heap->PopTopItem();
+	int fifthMin = heap->PopTopItem();
 	
-	EXPECT_EQ(result, 5);
+	EXPECT_EQ(firstMin, 5);
+	EXPECT_EQ(secondMin, 4);
+	EXPECT_EQ(thirdMin, 3);
+	EXPECT_EQ(fourthMin, 2);
+	EXPECT_EQ(fifthMin, 1);
 }
 
 TEST(MaxHeapTests, FiveItemHeap)
@@ -72,9 +97,17 @@ TEST(MaxHeapTests, FiveItemHeap)
 	heap->InsertItem(3);
 	heap->InsertItem(2);
 	heap->InsertItem(1);
-	int result = heap->GetTopItem();
+	int firstMin = heap->PopTopItem();
+	int secondMin = heap->PopTopItem();
+	int thirdMin = heap->PopTopItem();
+	int fourthMin = heap->PopTopItem();
+	int fifthMin = heap->PopTopItem();
 	
-	EXPECT_EQ(result, 5);
+	EXPECT_EQ(firstMin, 5);
+	EXPECT_EQ(secondMin, 4);
+	EXPECT_EQ(thirdMin, 3);
+	EXPECT_EQ(fourthMin, 2);
+	EXPECT_EQ(fifthMin, 1);
 }
 
 #pragma endregion
