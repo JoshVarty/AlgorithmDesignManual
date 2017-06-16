@@ -7,7 +7,7 @@ public:
 private:
 	void BubbleUp(int index);
 	int size = 0;
-	const int MAX_SIZE = 10000;
+	static const int MAX_SIZE = 10000;
 	int items[MAX_SIZE];
 };
 
