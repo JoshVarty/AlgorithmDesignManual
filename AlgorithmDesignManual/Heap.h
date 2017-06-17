@@ -4,10 +4,10 @@ class MinHeap {
 public:
 	void InsertItem(int item);
 	int PopTopItem();
+	int Size = 0;
 private:
 	void bubbleUp(int index);
 	void bubbleDown(int index);
-	int size = 0;
 	int getParentIndex(int index);
 	int getFirstChildIndex(int index);
 	static const int MAX_SIZE = 10000;
@@ -18,10 +18,10 @@ class MaxHeap {
 public:
 	void InsertItem(int item);
 	int PopTopItem();
+	int Size = 0;
 private:
 	void bubbleUp(int index);
 	void bubbleDown(int index);
-	int size = 0;
 	int getParentIndex(int index);
 	int getFirstChildIndex(int index);
 	static const int MAX_SIZE = 10000;

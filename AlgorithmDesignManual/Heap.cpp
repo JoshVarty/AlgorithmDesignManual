@@ -24,7 +24,7 @@ void MinHeap::bubbleDown(int index) {
 	int minIndex = index;
 
 	for (int i = 0; i <= 1; i++) {
-		if (childIndex + i <= this->size) {
+		if (childIndex + i <= this->Size) {
 			if (this->items[minIndex] > this->items[childIndex + i]) {
 				minIndex = childIndex + i;
 			}
@@ -52,29 +52,29 @@ int MinHeap::getFirstChildIndex(int index) {
 }
 
 int MinHeap::PopTopItem() {
-	if (this->size <= 0)
+	if (this->Size <= 0)
 	{
 		std::cout << "ERROR: Heap is empty";
 		return -1;
 	}
 
 	int min = items[0];
-	this->items[0] = this->items[this->size - 1];
-	this->size = this->size - 1;
+	this->items[0] = this->items[this->Size - 1];
+	this->Size = this->Size - 1;
 	this->bubbleDown(0);
 
 	return min;
 }
 
 void MinHeap::InsertItem(int item) {
-	if (this->size > MAX_SIZE) {
+	if (this->Size > MAX_SIZE) {
 		std::cout << "Error: Heap is full"; 
 		return;
 	}
 
-	items[this->size] = item;
-	bubbleUp(this->size);
-	this->size = this->size + 1;
+	items[this->Size] = item;
+	bubbleUp(this->Size);
+	this->Size = this->Size + 1;
 }
 
 #pragma endregion
@@ -102,7 +102,7 @@ void MaxHeap::bubbleDown(int index) {
 	int maxIndex = index;
 
 	for (int i = 0; i <= 1; i++) {
-		if (childIndex + i <= this->size) {
+		if (childIndex + i <= this->Size) {
 			if (this->items[maxIndex] < this->items[childIndex + i]) {
 				maxIndex = childIndex + i;
 			}
@@ -130,29 +130,29 @@ int MaxHeap::getFirstChildIndex(int index) {
 }
 
 int MaxHeap::PopTopItem() {
-	if (this->size <= 0)
+	if (this->Size <= 0)
 	{
 		std::cout << "ERROR: Heap is empty";
 		return -1;
 	}
 
 	int max = items[0];
-	this->items[0] = this->items[this->size - 1];
-	this->size = this->size - 1;
+	this->items[0] = this->items[this->Size - 1];
+	this->Size = this->Size - 1;
 	this->bubbleDown(0);
 
 	return max;
 }
 
 void MaxHeap::InsertItem(int item) {
-	if (this->size > MAX_SIZE) {
+	if (this->Size > MAX_SIZE) {
 		std::cout << "Error: Heap is full"; 
 		return;
 	}
 
-	items[this->size] = item;
-	bubbleUp(this->size);
-	this->size = this->size + 1;
+	items[this->Size] = item;
+	bubbleUp(this->Size);
+	this->Size = this->Size + 1;
 }
 
 #pragma endregion
