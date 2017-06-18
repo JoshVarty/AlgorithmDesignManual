@@ -4,6 +4,7 @@ class MinHeap {
 public:
 	void InsertItem(int item);
 	int PopTopItem();
+	int GetTopItem();
 	int Size = 0;
 private:
 	void bubbleUp(int index);
@@ -18,6 +19,7 @@ class MaxHeap {
 public:
 	void InsertItem(int item);
 	int PopTopItem();
+	int GetTopItem();
 	int Size = 0;
 private:
 	void bubbleUp(int index);

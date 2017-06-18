@@ -51,6 +51,17 @@ int MinHeap::getFirstChildIndex(int index) {
 	return index * 2;
 }
 
+int MinHeap::GetTopItem() {
+	if (this->Size <= 0)
+	{
+		std::cout << "ERROR: Heap is empty";
+		return -1;
+	}
+
+	int min = items[0];
+	return min;
+}
+
 int MinHeap::PopTopItem() {
 	if (this->Size <= 0)
 	{
@@ -127,6 +138,17 @@ int MaxHeap::getParentIndex(int index) {
 
 int MaxHeap::getFirstChildIndex(int index) {
 	return index * 2;
+}
+
+int MaxHeap::GetTopItem() {
+	if (this->Size <= 0)
+	{
+		std::cout << "ERROR: Heap is empty";
+		return -1;
+	}
+
+	int max = items[0];
+	return max;
 }
 
 int MaxHeap::PopTopItem() {

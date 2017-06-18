@@ -149,6 +149,8 @@
     <ClCompile Include="BinaryTreeTests.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="HeapTests.cpp" />
+    <ClCompile Include="MedianTracker.cpp" />
+    <ClCompile Include="MedianTrackerTests.cpp" />
     <ClCompile Include="StringReverserTests.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListTests.cpp" />
@@ -164,6 +166,7 @@
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="Heap.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="MedianTracker.h" />
     <ClInclude Include="StringReverser.h" />
     <ClInclude Include="Trie.h" />
   </ItemGroup>
