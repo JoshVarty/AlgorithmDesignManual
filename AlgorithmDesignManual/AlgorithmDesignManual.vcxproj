@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnagramsTests.cpp" />
     <ClCompile Include="ArrayShifter.cpp" />
     <ClCompile Include="ArrayShifterTests.cpp" />
     <ClCompile Include="BinaryTree.cpp" />

@@ -3,14 +3,12 @@
 
 #pragma region MedianTrackerTests
 
-
 TEST(MediaTrackerTests, InsertOneItem)
 {
 	auto* tracker = new MedianTracker();
 	int median = tracker->AddItem(1);
 	EXPECT_EQ(median, 1);
 }
-
 
 TEST(MedianTrackerTests, ItemsIncreasing)
 {
@@ -45,4 +43,3 @@ TEST(MedianTrackerTests, ItemsDencreasing)
 }
 
 #pragma endregion
-
