@@ -148,6 +148,7 @@
     <ClCompile Include="ArrayShifterTests.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="BinaryTreeTests.cpp" />
+    <ClCompile Include="CoinProblems.cpp" />
     <ClCompile Include="HashQuestionTests.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="HeapTests.cpp" />
