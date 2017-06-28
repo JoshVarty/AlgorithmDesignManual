@@ -17,7 +17,11 @@ void QueueWithStacks::pop() {
 			stack_oldest_on_top.push(current);
 		}
 
-		stack_oldest_on_top.pop();
+		//Only pop if there's something to pop.
+		//Not the end of the world if they try to pop an empty queue I guess...
+		if (!stack_oldest_on_top.empty()) {
+			stack_oldest_on_top.pop();
+		}
 	}
 }
 
