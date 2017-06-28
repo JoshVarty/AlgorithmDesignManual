@@ -154,6 +154,8 @@
     <ClCompile Include="HeapTests.cpp" />
     <ClCompile Include="MedianTracker.cpp" />
     <ClCompile Include="MedianTrackerTests.cpp" />
+    <ClCompile Include="QueueWithStacks.cpp" />
+    <ClCompile Include="QueueWithStacksTests.cpp" />
     <ClCompile Include="StringReverserTests.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListTests.cpp" />
@@ -170,6 +172,7 @@
     <ClInclude Include="Heap.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="MedianTracker.h" />
+    <ClInclude Include="QueueWithStacks.h" />
     <ClInclude Include="StringReverser.h" />
     <ClInclude Include="Trie.h" />
   </ItemGroup>
