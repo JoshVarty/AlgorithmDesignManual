@@ -32,5 +32,23 @@ TEST(QueueWithStacksTests, InsertTwoPopAndCheck)
 	queue->pop();
 
 	int front = queue->front();
-	EXPECT_EQ(front, 1);
+	EXPECT_EQ(front, 2);
+}
+
+TEST(QueueWithStacksTests, LongerTest)
+{
+	auto * queue = new QueueWithStacks();
+	int front = -1;
+	queue->push(42);
+	queue->pop();
+	queue->push(14);
+	front = queue->front();
+	EXPECT_EQ(front, 14);
+	queue->push(28);
+	front = queue->front();
+	EXPECT_EQ(front, 14);
+	queue->push(60);
+	queue->push(78);
+	queue->pop();
+	queue->pop();
 }
