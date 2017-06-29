@@ -154,6 +154,7 @@
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="HeapTests.cpp" />
     <ClCompile Include="LongestIncreasingSequence.cpp" />
+    <ClCompile Include="MaximumSubarray.cpp" />
     <ClCompile Include="MedianTracker.cpp" />
     <ClCompile Include="MedianTrackerTests.cpp" />
     <ClCompile Include="QueueWithStacks.cpp" />

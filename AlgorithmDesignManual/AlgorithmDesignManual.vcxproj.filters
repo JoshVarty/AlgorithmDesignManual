@@ -78,6 +78,9 @@
     <ClCompile Include="LongestIncreasingSequence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MaximumSubarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
