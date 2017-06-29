@@ -52,6 +52,15 @@ TEST(MaximumSubarrayTests, FiveItemsWithNegative2)
 	EXPECT_EQ(sumOfMaxSubarray, 11);
 }
 
+TEST(MaximumSubarrayTests, FiveItemsWithNegative3)
+{
+	int sequence[5] = { 1, 2, -3, 4, 5 };
+	int length = sizeof(sequence) / sizeof(sequence[0]);
+
+	int sumOfMaxSubarray = getSumOfMaxSubarray(sequence, length);
+	EXPECT_EQ(sumOfMaxSubarray, 9);
+}
+
 TEST(MaximumSubarrayTests, Example)
 {
 	int sequence[9] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
