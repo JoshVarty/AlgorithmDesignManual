@@ -21,10 +21,10 @@ bool compareByScoreAndThenName(const Player &first, const Player &second) {
 	}
 	else {
 		auto compare = first.name.compare(second.name);
-		if (compare == 1) {
+		if (compare > 0) {
 			return 0;
 		}
-		else if (compare == -1) {
+		else if (compare < 0) {
 			return 1;
 		}
 		else {
