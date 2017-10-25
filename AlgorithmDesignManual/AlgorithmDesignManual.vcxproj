@@ -157,6 +157,7 @@
     <ClCompile Include="MaximumSubarray.cpp" />
     <ClCompile Include="MedianTracker.cpp" />
     <ClCompile Include="MedianTrackerTests.cpp" />
+    <ClCompile Include="MergeSortInversions.cpp" />
     <ClCompile Include="QueueWithStacks.cpp" />
     <ClCompile Include="QueueWithStacksTests.cpp" />
     <ClCompile Include="StringReverserTests.cpp" />
