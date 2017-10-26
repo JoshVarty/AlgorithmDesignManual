@@ -84,6 +84,9 @@
     <ClCompile Include="MergeSortInversions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KaratsubaAlgorithms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

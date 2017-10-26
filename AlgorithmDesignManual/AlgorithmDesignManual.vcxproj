@@ -153,6 +153,7 @@
     <ClCompile Include="HashQuestionTests.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="HeapTests.cpp" />
+    <ClCompile Include="KaratsubaAlgorithms.cpp" />
     <ClCompile Include="LongestIncreasingSequence.cpp" />
     <ClCompile Include="MaximumSubarray.cpp" />
     <ClCompile Include="MedianTracker.cpp" />
