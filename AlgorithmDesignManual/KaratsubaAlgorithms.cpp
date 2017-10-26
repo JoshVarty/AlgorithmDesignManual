@@ -57,8 +57,8 @@ string KaratsubaMultiply(string num1, string num2) {
 		}
 	}
 
-	/*string longerString = max(num1.length, num2.length);
-	int middle = longerString.length() / 2;
+	int maxLength = max(num1.length(), num2.length());
+	int middle = maxLength / 2;
 
 	string high1 = num1.substr(0, num1.length() - middle + 1);
 	string low1 = num1.substr(middle, num1.length() - middle + 1);
@@ -69,9 +69,7 @@ string KaratsubaMultiply(string num1, string num2) {
 	string a1 = Add(low1, high1);
 	string a2 = Add(low2, high2);
 	string z1 = KaratsubaMultiply(a1, a2);
-	string z2 = KaratsubaMultiply(high1, high2);*/
-
-
+	string z2 = KaratsubaMultiply(high1, high2);
 
 	string result;
 }
