@@ -3,20 +3,24 @@
 using namespace std;
 
 
-string RightPadWithZero(string input, int numZeros) {
+string LeftPadWithZero(string input, int numZeros) {
 	return string(numZeros, '0') + input;
 }
 
+string RightPadWithZero(string input, int numZeros) {
+	return input + string(numZeros, '0');
+}
 
+//Returns num1 + num2
 string Add(string num1, string num2) {
 	//Get the strings to be the same length
 	int difference = abs(int(num1.length() - num2.length()));
 
 	if (num1.length() < num2.length()) {
-		num1 = RightPadWithZero(num1, difference);
+		num1 = LeftPadWithZero(num1, difference);
 	}
 	else if (num2.length() < num1.length()) {
-		num2 = RightPadWithZero(num2, difference);
+		num2 = LeftPadWithZero(num2, difference);
 	}
 
 	string result = string(num1.length(), '0');
@@ -47,6 +51,55 @@ string Add(string num1, string num2) {
 	return result;
 }
 
+//Returns num1 - num2
+//Requires: num1 >= num2
+string Substract(string num1, string num2) {
+
+	//make sure they're the same length
+	int difference = abs(int(num1.length() - num2.length()));
+
+	if (num1.length() < num2.length()) {
+		num1 = LeftPadWithZero(num1, difference);
+	}
+	else if (num2.length() < num1.length()) {
+		num2 = LeftPadWithZero(num2, difference);
+	}
+
+	string result = string(num1.length(), '0');
+	int carry = 0;
+	for (int i = num1.length() - 1; i >= 0; i--) {
+		int current1 = num1[i] - '0';
+		int current2 = num2[i] - '0';
+
+		if (current2 > current1) {
+			current1 = current1 + 10;
+
+			int j = i - 1;
+			while (j >= 0) {
+				num1[j] = (num1[j] - '0') - 1 % 10 + '0';
+				//Only keep going if we've wrapped from 0 to 9
+				if (num1[j] != '9')
+					break;
+
+				j--;
+			}
+
+		}
+
+		result[i] = (current1 - current2) + '0';
+	}
+
+	//Remove any leading zeros. 
+	//However if it's all zeros, don't remove all of them.
+	int i = 0;
+	while (result[i] == '0' && i < result.length() - 1) {
+		i++;
+	}
+
+	result.erase(0, i);
+	return result;
+}
+
 string KaratsubaMultiply(string num1, string num2) {
 
 	if (num1.length() <= 2 && num2.length() <= 2) {
@@ -60,60 +113,105 @@ string KaratsubaMultiply(string num1, string num2) {
 	int maxLength = max(num1.length(), num2.length());
 	int middle = maxLength / 2;
 
-	string high1 = num1.substr(0, num1.length() - middle + 1);
-	string low1 = num1.substr(middle, num1.length() - middle + 1);
-	string high2 = num2.substr(0, num2.length() - middle + 1);
-	string low2 = num2.substr(middle, num2.length() - middle + 1);
+	string xLeft = num1.substr(0, num1.length() - middle);
+	string xRight = num1.substr(middle, num1.length() - middle);
+	string yLeft = num2.substr(0, num2.length() - middle);
+	string yRight = num2.substr(middle, num2.length() - middle);
 
-	string z0 = KaratsubaMultiply(low1, low2);
-	string a1 = Add(low1, high1);
-	string a2 = Add(low2, high2);
-	string z1 = KaratsubaMultiply(a1, a2);
-	string z2 = KaratsubaMultiply(high1, high2);
-
-	string result;
+	return "";
 }
-
-
-//TEST(KaratsubaTest, Basic) {
-//	string num1 = "2";
-//	string num2 = "2";
-//	string result = KaratsubaMultiply(num1, num2);
-//	EXPECT_EQ(result, "4");
-//}
 
 
 TEST(KaratsubaTest, Basic) {
 	string num1 = "2";
 	string num2 = "2";
-	string result = Add(num1, num2);
+	string result = KaratsubaMultiply(num1, num2);
 	EXPECT_EQ(result, "4");
 }
 
-TEST(KaratsubaTest, BasicWithCarry) {
+TEST(KaratsubaTest, BasicWithExpansion) {
+	string num1 = "9";
+	string num2 = "9";
+	string result = KaratsubaMultiply(num1, num2);
+	EXPECT_EQ(result, "81");
+}
+
+//
+//TEST(KaratsubaTest, TwoDigits) {
+//	string num1 = "99";
+//	string num2 = "99";
+//	string result = KaratsubaMultiply(num1, num2);
+//	EXPECT_EQ(result, "9801");
+//}
+
+
+
+//TEST(KaratsubaTest, FourDigits) {
+//	string num1 = "9999";
+//	string num2 = "9999";
+//	string result = KaratsubaMultiply(num1, num2);
+//	EXPECT_EQ(result, "99980001");
+//}
+
+
+
+
+
+
+TEST(KaratsubaAddTest, BasicWithCarry) {
 	string num1 = "19";
 	string num2 = "19";
 	string result = Add(num1, num2);
 	EXPECT_EQ(result, "38");
 }
 
-TEST(KaratsubaTest, SizeIncreases) {
+TEST(KaratsubaAddTest, SizeIncreases) {
 	string num1 = "99";
 	string num2 = "99";
 	string result = Add(num1, num2);
 	EXPECT_EQ(result, "198");
 }
 
-TEST(KaratsubaTest, SlightlyDifferentLengths) {
+TEST(KaratsubaAddTest, SlightlyDifferentLengths) {
 	string num1 = "1";
 	string num2 = "18";
 	string result = Add(num1, num2);
 	EXPECT_EQ(result, "19");
 }
 
-TEST(KaratsubaTest, SlightlyDifferentLengthsWithCarry) {
+TEST(KaratsubaAddTest, SlightlyDifferentLengthsWithCarry) {
 	string num1 = "9";
 	string num2 = "19";
 	string result = Add(num1, num2);
 	EXPECT_EQ(result, "28");
+}
+
+
+
+TEST(KaratsubaSubTest, Basic) {
+	string num1 = "5";
+	string num2 = "3";
+	string result = Substract(num1, num2);
+	EXPECT_EQ(result, "2");
+}
+
+TEST(KaratsubaSubTest, BasicZeroSum) {
+	string num1 = "19";
+	string num2 = "19";
+	string result = Substract(num1, num2);
+	EXPECT_EQ(result, "0");
+}
+
+TEST(KaratsubaSubTest, MultipleCarries) {
+	string num1 = "100";
+	string num2 = "1";
+	string result = Substract(num1, num2);
+	EXPECT_EQ(result, "99");
+}
+
+TEST(KaratsubaSubTest, MultipleCarries2) {
+	string num1 = "100";
+	string num2 = "99";
+	string result = Substract(num1, num2);
+	EXPECT_EQ(result, "1");
 }
