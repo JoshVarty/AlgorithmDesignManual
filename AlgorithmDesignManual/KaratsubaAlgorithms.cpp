@@ -110,15 +110,34 @@ string KaratsubaMultiply(string num1, string num2) {
 		}
 	}
 
+	//Get the strings to be the same length
+	int difference = abs(int(num1.length() - num2.length()));
+
+	if (num1.length() < num2.length()) {
+		num1 = LeftPadWithZero(num1, difference);
+	}
+	else if (num2.length() < num1.length()) {
+		num2 = LeftPadWithZero(num2, difference);
+	}
+
 	int maxLength = max(num1.length(), num2.length());
+	int c_middle = (maxLength + 1) / 2;
 	int middle = maxLength / 2;
 
-	string xLeft = num1.substr(0, num1.length() - middle);
-	string xRight = num1.substr(middle, num1.length() - middle);
-	string yLeft = num2.substr(0, num2.length() - middle);
-	string yRight = num2.substr(middle, num2.length() - middle);
+	string xLeft = num1.substr(0, c_middle);
+	string xRight = num1.substr(c_middle, num1.length() - c_middle);
+	string yLeft = num2.substr(0, c_middle);
+	string yRight = num2.substr(c_middle, num2.length() - c_middle);
 
-	return "";
+	string z0 = KaratsubaMultiply(xRight, yRight);
+	string z1 = KaratsubaMultiply(Add(xRight, xLeft), Add(yRight, yLeft));
+	string z2 = KaratsubaMultiply(xLeft, yLeft);
+
+	string a1 = RightPadWithZero(z2, 2 * (middle));
+	string a2 = RightPadWithZero(Substract(Substract(z1, z2), z0), middle);
+
+	string result = Add(Add(a1, a2), z0);
+	return result;
 }
 
 
@@ -136,25 +155,42 @@ TEST(KaratsubaTest, BasicWithExpansion) {
 	EXPECT_EQ(result, "81");
 }
 
-//
-//TEST(KaratsubaTest, TwoDigits) {
-//	string num1 = "99";
-//	string num2 = "99";
-//	string result = KaratsubaMultiply(num1, num2);
-//	EXPECT_EQ(result, "9801");
-//}
+
+TEST(KaratsubaTest, TwoDigits) {
+	string num1 = "99";
+	string num2 = "99";
+	string result = KaratsubaMultiply(num1, num2);
+	EXPECT_EQ(result, "9801");
+}
+
+TEST(KaratsubaTest, ThreeDigits) {
+	string num1 = "100";
+	string num2 = "100";
+	string result = KaratsubaMultiply(num1, num2);
+	EXPECT_EQ(result, "10000");
+}
 
 
+TEST(KaratsubaTest, ThreeDigits2) {
+	string num1 = "198";
+	string num2 = "198";
+	string result = KaratsubaMultiply(num1, num2);
+	EXPECT_EQ(result, "39204");
+}
 
-//TEST(KaratsubaTest, FourDigits) {
-//	string num1 = "9999";
-//	string num2 = "9999";
-//	string result = KaratsubaMultiply(num1, num2);
-//	EXPECT_EQ(result, "99980001");
-//}
+TEST(KaratsubaTest, ThreeDigits3) {
+	string num1 = "117";
+	string num2 = "117";
+	string result = KaratsubaMultiply(num1, num2);
+	EXPECT_EQ(result, "13689");
+}
 
-
-
+TEST(KaratsubaTest, UnevenDigits) {
+	string num1 = "12345";
+	string num2 = "6789";
+	string result = KaratsubaMultiply(num1, num2);
+	EXPECT_EQ(result, "83810205");
+}
 
 
 
