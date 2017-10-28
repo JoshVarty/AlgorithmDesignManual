@@ -74,7 +74,6 @@ TEST(MergeSortTest, Basic) {
 	auto result = mergesort(arr, 0, arr.size() - 1); 
 	EXPECT_EQ(result, 0);
 	EXPECT_EQ(arr[0], 1);
-	cout << result << endl;
 }
 
 TEST(MergeSortTest, TwoSorted) {
@@ -83,7 +82,6 @@ TEST(MergeSortTest, TwoSorted) {
 	EXPECT_EQ(result, 0);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
-	cout << result << endl;
 }
 
 TEST(MergeSortTest, TwoUnsorted) {
@@ -92,7 +90,6 @@ TEST(MergeSortTest, TwoUnsorted) {
 	EXPECT_EQ(result, 1);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
-	cout << result << endl;
 }
 
 TEST(MergeSortTest, ThreeBackward) {
@@ -102,7 +99,6 @@ TEST(MergeSortTest, ThreeBackward) {
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	EXPECT_EQ(arr[2], 3);
-	cout << result << endl;
 }
 
 
@@ -115,5 +111,4 @@ TEST(MergeSortTest, HackerRankExample) {
 	EXPECT_EQ(arr[2], 2);
 	EXPECT_EQ(arr[3], 2);
 	EXPECT_EQ(arr[4], 3);
-	cout << result << endl;
 }
