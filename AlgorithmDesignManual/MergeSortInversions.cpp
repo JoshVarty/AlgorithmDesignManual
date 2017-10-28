@@ -7,12 +7,20 @@
 #include <algorithm>
 
 using namespace std;
+queue<int> * q1;
+queue<int> * q2;
 
 long long merge(vector<int> &array, long long low, long long middle, long long high) {
 	long long inversions = 0;
-	auto q1 = new queue<int>();
-	auto q2 = new queue<int>();
 
+	if (q1 == nullptr) {
+		q1 = new queue<int>();
+	}
+
+	if (q2 == nullptr) {
+		q2 = new queue<int>();
+	}
+	
 	for (int i = low; i <= middle; i++) {
 		q1->push(array[i]);
 	}
@@ -28,6 +36,7 @@ long long merge(vector<int> &array, long long low, long long middle, long long h
 		}
 		else {
 			array[i] = q2->front();
+			inversions = inversions + (long long)q1->size();
 			q2->pop();
 		}
 		i = i + 1;
@@ -44,7 +53,7 @@ long long merge(vector<int> &array, long long low, long long middle, long long h
 		i = i + 1;
 	}
 
-	return 0;
+	return inversions;
 }
 
 
@@ -71,7 +80,7 @@ TEST(MergeSortTest, Basic) {
 TEST(MergeSortTest, TwoSorted) {
 	vector<int> arr({ 1,2 });
 	auto result = mergesort(arr, 0, arr.size() - 1); 
-	//EXPECT_EQ(result, 0);
+	EXPECT_EQ(result, 0);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	cout << result << endl;
@@ -80,17 +89,31 @@ TEST(MergeSortTest, TwoSorted) {
 TEST(MergeSortTest, TwoUnsorted) {
 	vector<int> arr({ 2,1 });
 	auto result = mergesort(arr, 0, arr.size() - 1); 
-	//EXPECT_EQ(result, 1);
+	EXPECT_EQ(result, 1);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	cout << result << endl;
 }
+
 TEST(MergeSortTest, ThreeBackward) {
 	vector<int> arr({ 3,2,1 });
 	auto result = mergesort(arr, 0, arr.size() - 1); 
-	//EXPECT_EQ(result, 2);
+	EXPECT_EQ(result, 3);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	EXPECT_EQ(arr[2], 3);
+	cout << result << endl;
+}
+
+
+TEST(MergeSortTest, HackerRankExample) {
+	vector<int> arr({ 2, 1, 3, 1, 2 });
+	auto result = mergesort(arr, 0, arr.size() - 1);
+	EXPECT_EQ(result, 4);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 1);
+	EXPECT_EQ(arr[2], 2);
+	EXPECT_EQ(arr[3], 2);
+	EXPECT_EQ(arr[4], 3);
 	cout << result << endl;
 }
