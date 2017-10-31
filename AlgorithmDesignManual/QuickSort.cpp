@@ -252,7 +252,7 @@ TEST(QuickSortTest_Last, dgrcode_01) {
 
 	auto result = quicksort_lastelement(arr, 0, arr.size() - 1);
 	result = result + arr.size() - 1;
-	EXPECT_EQ(result, 6);
+	EXPECT_EQ(result, 10);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	EXPECT_EQ(arr[2], 3);
@@ -265,7 +265,7 @@ TEST(QuickSortTest_Last, dgrcode_02) {
 
 	auto result = quicksort_lastelement(arr, 0, arr.size() - 1);
 	result = result + arr.size() - 1;
-	EXPECT_EQ(result, 7);
+	EXPECT_EQ(result, 8);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	EXPECT_EQ(arr[2], 3);
@@ -278,7 +278,7 @@ TEST(QuickSortTest_Last, dgrcode_15_20) {
 
 	auto result = quicksort_lastelement(arr, 0, arr.size() - 1);
 	result = result + arr.size() - 1;
-	EXPECT_EQ(result, 69);
+	EXPECT_EQ(result, 65);
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	EXPECT_EQ(arr[2], 3);
