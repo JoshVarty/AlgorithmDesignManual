@@ -161,6 +161,7 @@
     <ClCompile Include="MergeSortInversions.cpp" />
     <ClCompile Include="QueueWithStacks.cpp" />
     <ClCompile Include="QueueWithStacksTests.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="StringReverserTests.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkedListTests.cpp" />
