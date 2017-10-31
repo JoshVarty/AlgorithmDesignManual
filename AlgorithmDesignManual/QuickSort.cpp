@@ -23,7 +23,7 @@ int partition(vector<int> &array, int low, int high) {
 	swap(array, low, pivot);
 
 	int i = low + 1;
-	for (int j = low + 1; i <= high; i++) {
+	for (int j = low + 1; j <= high; j++) {
 		if (array[j] < pivotValue) {
 			//Swap
 			swap(array, j, i);
@@ -32,7 +32,7 @@ int partition(vector<int> &array, int low, int high) {
 	}
 
 	//Put the partition element back in the correct place
-	swap(array[low], i);
+	swap(array, low, i);
 
 	return pivot;
 }
