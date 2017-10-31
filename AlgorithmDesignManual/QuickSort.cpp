@@ -32,9 +32,9 @@ int partition(vector<int> &array, int low, int high) {
 	}
 
 	//Put the partition element back in the correct place
-	swap(array, low, i);
+	swap(array, low, i - 1);
 
-	return pivot;
+	return i - 1;
 }
 
 long long quicksort(vector<int> &array, int low, int high) {
@@ -78,4 +78,36 @@ TEST(QuickSortTest, ThreeBackward) {
 	EXPECT_EQ(arr[0], 1);
 	EXPECT_EQ(arr[1], 2);
 	EXPECT_EQ(arr[2], 3);
+}
+
+TEST(QuickSortTest, Three) {
+	vector<int> arr({ 2,3,1 });
+	auto result = quicksort(arr, 0, arr.size() - 1);
+	//EXPECT_EQ(result, 3);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+}
+
+
+TEST(QuickSortTest, FiveBackward) {
+	vector<int> arr({ 5,4,3,2,1 });
+	auto result = quicksort(arr, 0, arr.size() - 1);
+	//EXPECT_EQ(result, 3);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+	EXPECT_EQ(arr[3], 4);
+	EXPECT_EQ(arr[4], 5);
+}
+
+
+TEST(QuickSortTest, Four) {
+	vector<int> arr({ 1,4,2,3 });
+	auto result = quicksort(arr, 0, arr.size() - 1);
+	//EXPECT_EQ(result, 3);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+	EXPECT_EQ(arr[3], 4);
 }
