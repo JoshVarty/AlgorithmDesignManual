@@ -14,6 +14,65 @@ void swap(vector<int> &array, int pos1, int pos2) {
 	array[pos2] = temp;
 }
 
+int getMedianIndex(vector<int> &array, int firstIndex, int lastIndex) {
+	int middleIndex = (lastIndex - firstIndex) / 2;
+
+	int first = array[firstIndex];
+	int middle = array[middleIndex];
+	int last = array[lastIndex];
+	
+	int medianValue = max(min(first, middle), min(max(first, middle), last));
+
+	if (medianValue == first) {
+		return firstIndex;
+	}
+	else if (medianValue == middle) {
+		return middleIndex;
+	}
+	else {
+		return lastIndex;
+	}
+}
+
+int partition_medianelement(vector<int> &array, int low, int high) {
+
+	int pivot = getMedianIndex(array, low, high);
+	int pivotValue = array[pivot];
+
+	//Swap pivot with first element
+	//Temporarily pointless.
+	swap(array, low, pivot);
+
+	int i = low + 1;
+	for (int j = low + 1; j <= high; j++) {
+		if (array[j] < pivotValue) {
+			//Swap
+			swap(array, j, i);
+			i = i + 1;
+		}
+	}
+
+	//Put the partition element back in the correct place
+	swap(array, low, i - 1);
+
+	return i - 1;
+}
+
+long long quicksort_medianelement(vector<int> &array, int low, int high) {
+	if (low >= high)
+		return 0;
+
+	int pivot = partition_medianelement(array, low, high);
+
+	int a = max((pivot - 1) - low, 0);
+	int b = quicksort_medianelement(array, low, pivot - 1);
+	int c = max(high - (pivot + 1), 0);
+	int d = quicksort_medianelement(array, pivot + 1, high);
+
+	return a + b + c + d;
+}
+
+
 
 int partition_lastelement(vector<int> &array, int low, int high) {
 	int pivot = high;
