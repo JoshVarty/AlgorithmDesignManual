@@ -4,6 +4,7 @@
 #include <vector>
 #include <queue>
 #include <iostream>
+#include <fstream>
 #include <algorithm>
 
 using namespace std;
@@ -471,3 +472,35 @@ TEST(MedianTests, CourseraExample2) {
 
 
 #pragma endregion
+
+
+
+TEST(QuickSortTests, AllTests) {
+	ifstream fileWithNumbers("");
+	ifstream fileWithAnswers("");
+
+	vector<int> array1;
+	vector<int> array2;
+	vector<int> array3;
+	string currentLine = "";
+	while (getline(fileWithNumbers, currentLine)) {
+		int currentNum = stoi(currentLine);
+		array1.push_back(currentNum);
+		array2.push_back(currentNum);
+		array3.push_back(currentNum);
+	}
+
+	vector<int> answers;
+	while (getline(fileWithAnswers, currentLine)) {
+		int currentAnswer = stoi(currentLine);
+		answers.push_back(currentAnswer);
+	}
+
+	auto result1 = quicksort_firstelement(array1, 0, array1.size() - 1);
+	auto result2 = quicksort_lastelement(array2, 0, array2.size() - 1);
+	auto result3 = quicksort_medianelement(array3, 0, array3.size() - 1);
+
+	EXPECT_EQ(result1, answers[0]);
+	EXPECT_EQ(result2, answers[1]);
+	EXPECT_EQ(result3, answers[2]);
+}
