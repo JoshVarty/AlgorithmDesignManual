@@ -15,7 +15,7 @@ void swap(vector<int> &array, int pos1, int pos2) {
 }
 
 int getMedianIndex(vector<int> &array, int firstIndex, int lastIndex) {
-	int middleIndex = (lastIndex - firstIndex) / 2;
+	int middleIndex = ((lastIndex - firstIndex) / 2) + firstIndex;
 
 	int first = array[firstIndex];
 	int middle = array[middleIndex];
