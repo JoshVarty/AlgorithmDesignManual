@@ -248,7 +248,6 @@ TEST(QuickSortTest_First, dgrcode_15_20) {
 #pragma endregion
 
 
-
 #pragma region QuickSort_LastElement
 
 TEST(QuickSortTest_Last, Basic) {
@@ -344,5 +343,131 @@ TEST(QuickSortTest_Last, dgrcode_15_20) {
 	EXPECT_EQ(arr[3], 4);
 	EXPECT_EQ(arr[4], 5);
 }
+
+#pragma endregion
+
+
+#pragma region QuickSort_MedianElement
+
+TEST(QuickSortTest_Median, Basic) {
+	vector<int> arr({ 1 });
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	EXPECT_EQ(arr[0], 1);
+}
+
+TEST(QuickSortTest_Median, TwoSorted) {
+	vector<int> arr({ 1,2 });
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+}
+
+TEST(QuickSortTest_Median, TwoUnsorted) {
+	vector<int> arr({ 2,1 });
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+}
+
+TEST(QuickSortTest_Median, ThreeBackward) {
+	vector<int> arr({ 3,2,1 });
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+}
+
+TEST(QuickSortTest_Median, Three) {
+	vector<int> arr({ 2,3,1 });
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+}
+
+TEST(QuickSortTest_Median, FiveBackward) {
+	vector<int> arr({ 5,4,3,2,1 });
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+	EXPECT_EQ(arr[3], 4);
+	EXPECT_EQ(arr[4], 5);
+}
+
+TEST(QuickSortTest_Median, Four) {
+	vector<int> arr({ 1,4,2,3 });
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+	EXPECT_EQ(arr[3], 4);
+}
+
+TEST(QuickSortTest_Median, dgrcode_01) {
+	vector<int> arr({ 3, 2, 1, 4, 5 });
+
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	result = result + arr.size() - 1;
+	EXPECT_EQ(result, 6);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+	EXPECT_EQ(arr[3], 4);
+	EXPECT_EQ(arr[4], 5);
+}
+
+TEST(QuickSortTest_Median, dgrcode_02) {
+	vector<int> arr({ 4, 3, 2, 5, 1 });
+
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	result = result + arr.size() - 1;
+	EXPECT_EQ(result, 6);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+	EXPECT_EQ(arr[3], 4);
+	EXPECT_EQ(arr[4], 5);
+}
+
+TEST(QuickSortTest_Median, dgrcode_15_20) {
+	vector<int> arr({ 2,1,12,13,16,10,9,5,18,8,17,20,19,3,4,11,14,6,7,15 });
+
+	auto result = quicksort_medianelement(arr, 0, arr.size() - 1);
+	result = result + arr.size() - 1;
+	EXPECT_EQ(result, 56);
+	EXPECT_EQ(arr[0], 1);
+	EXPECT_EQ(arr[1], 2);
+	EXPECT_EQ(arr[2], 3);
+	EXPECT_EQ(arr[3], 4);
+	EXPECT_EQ(arr[4], 5);
+}
+
+
+#pragma endregion
+
+
+#pragma region MedianTests
+
+
+TEST(MedianTests, Three) {
+	vector<int> arr({ 1,2,3 });
+	int medianIndex = getMedianIndex(arr, 0, arr.size() - 1);
+	EXPECT_EQ(medianIndex, 1);
+}
+
+
+TEST(MedianTests, CourseraExample) {
+	vector<int> arr({ 4,5,6,7 });
+	int medianIndex = getMedianIndex(arr, 0, arr.size() - 1);
+	EXPECT_EQ(medianIndex, 1);
+}
+
+TEST(MedianTests, CourseraExample2) {
+	vector<int> arr({ 8, 2, 4, 5, 7, 1 });
+	int medianIndex = getMedianIndex(arr, 3, arr.size() - 1);
+	EXPECT_EQ(medianIndex, 3);
+}
+
 
 #pragma endregion
