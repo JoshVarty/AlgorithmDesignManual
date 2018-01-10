@@ -17,17 +17,11 @@ assert(isRotation("ab", "ab") == True)
 assert(isRotation("ab", "ba") == True)
 assert(isRotation("abc", "cab") == True)
 assert(isRotation("abc", "cab") == True)
-
 assert(isRotation("abcabc", "bcabca") == True)
-
-
-
 assert(isRotation("waterbottle", "erbottlewat") == True)
 assert(isRotation("waterbottle", "rbottlewate") == True)
 assert(isRotation("josh", "oshj") == True)
 assert(isRotation("josh", "josh") == True)
-
-
 assert(isRotation("waterbottle", "erbottlewat") == True)
 
 assert(isRotation("a", "aa") == False)
