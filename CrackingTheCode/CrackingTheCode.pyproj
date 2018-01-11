@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter1\Ch1_ArraysAndStrings_9.py</StartupFile>
+    <StartupFile>Chapter2\Ch2_LinkedLists_1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +33,10 @@
     <Compile Include="Chapter1\Ch1_ArraysAndStrings_9.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter2\Ch2_LinkedLists_1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chapter2\Node.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -41,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chapter1\" />
+    <Folder Include="Chapter2\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
