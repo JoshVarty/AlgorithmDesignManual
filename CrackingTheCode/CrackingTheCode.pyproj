@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Ch1_ArraysAndStrings_9.py</StartupFile>
+    <StartupFile>Chapter1\Ch1_ArraysAndStrings_9.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,20 +22,25 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Ch1_ArraysAndStrings_2.py" />
-    <Compile Include="Ch1_ArraysAndStrings_1.py" />
-    <Compile Include="Ch1_ArraysAndStrings_8.py" />
-    <Compile Include="Ch1_ArraysAndStrings_7.py" />
-    <Compile Include="Ch1_ArraysAndStrings_6.py" />
-    <Compile Include="Ch1_ArraysAndStrings_5.py" />
-    <Compile Include="Ch1_ArraysAndStrings_4.py" />
-    <Compile Include="Ch1_ArraysAndStrings_3.py" />
-    <Compile Include="Ch1_ArraysAndStrings_9.py">
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_2.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_1.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_8.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_7.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_6.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_5.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_4.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_3.py" />
+    <Compile Include="Chapter1\Ch1_ArraysAndStrings_9.py">
+      <SubType>Code</SubType>
+    </Compile>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|VisualStudio|Josh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Chapter1\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
