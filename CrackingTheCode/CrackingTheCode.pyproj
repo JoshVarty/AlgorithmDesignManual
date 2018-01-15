@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter2\Ch2_LinkedLists_3.py</StartupFile>
+    <StartupFile>Chapter2\Ch2_LinkedLists_4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +33,7 @@
     <Compile Include="Chapter1\Ch1_ArraysAndStrings_9.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter2\Ch2_LinkedLists_4.py" />
     <Compile Include="Chapter2\Ch2_LinkedLists_3.py" />
     <Compile Include="Chapter2\Ch2_LinkedLists_2.py" />
     <Compile Include="Chapter2\Ch2_LinkedLists_1.py">
