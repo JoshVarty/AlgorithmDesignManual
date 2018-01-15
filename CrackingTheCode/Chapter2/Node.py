@@ -14,6 +14,8 @@ class Node:
 
         current.next = end
 
+        return end
+
 
     def toList(self):
         list = [self.data]
