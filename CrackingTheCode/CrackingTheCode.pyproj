@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter2\Ch2_LinkedLists_8.py</StartupFile>
+    <StartupFile>Chapter3\Ch3_StacksAndQueues_1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -46,6 +46,9 @@
     <Compile Include="Chapter2\Node.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter3\Ch3_StacksAndQueues_1.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|VisualStudio|Josh" />
@@ -53,6 +56,7 @@
   <ItemGroup>
     <Folder Include="Chapter1\" />
     <Folder Include="Chapter2\" />
+    <Folder Include="Chapter3\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
