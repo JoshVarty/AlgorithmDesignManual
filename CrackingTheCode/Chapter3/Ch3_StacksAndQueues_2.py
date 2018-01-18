@@ -7,7 +7,8 @@
 # The MinStack will hold all the minimums as we know them. When we pop off our regular stack, we also pop off 
 # the min stack, and we recover what the minimum was when the stack had one less item in it
 
-
+#Optimization: We could improve this by only keeping track of when the minimum changes and the index at which 
+#it changes. Then if minimum changes rarely, we use less space.
 class StackWithMin:
 
     def __init__():
