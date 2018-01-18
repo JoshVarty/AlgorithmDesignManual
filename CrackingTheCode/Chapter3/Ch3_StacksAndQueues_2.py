@@ -8,7 +8,7 @@
 # the min stack, and we recover what the minimum was when the stack had one less item in it
 
 #Optimization: We could improve this by only keeping track of when the minimum changes and the index at which 
-#it changes. Then if minimum changes rarely, we use less space.
+#it changes. Then if minimum changes rarely, we use less space. Still O(n), though.
 class StackWithMin:
 
     def __init__():
