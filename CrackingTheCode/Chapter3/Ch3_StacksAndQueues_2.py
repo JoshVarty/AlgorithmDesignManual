@@ -11,18 +11,18 @@
 #it changes. Then if minimum changes rarely, we use less space. Still O(n), though.
 class StackWithMin:
 
-    def __init__():
+    def __init__(self):
         self.stack = []
         self.minStack = []
         pass
 
-    def getMin():
+    def getMin(self):
         if len(self.minStack > 0 ):
             return self.minStack[len(self.minStack) - 1]
 
         raise("Stack is empty")
 
-    def push(value):
+    def push(self, value):
 
         #Keep track of current minimum
         if len(self.minStack) == 0:
@@ -34,7 +34,7 @@ class StackWithMin:
 
         self.stack.append(value)
 
-    def pop():
+    def pop(self):
         #Pop item and remove it from stack
         lastItem = self.stack[len(self.stack) - 1]
         del self.stack[len(self.stack) - 1]

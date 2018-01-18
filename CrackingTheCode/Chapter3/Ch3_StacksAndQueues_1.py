@@ -5,7 +5,7 @@
 
 class ThreeStacksOneArray:
 
-    def __init__(size):
+    def __init__(self, size):
         self.length = size
         self.array = [0 for _ in range(size)]
 
@@ -15,7 +15,7 @@ class ThreeStacksOneArray:
         s3Pointer = int(self.length *  2 / 3)
 
 
-    def pushStack1(value):
+    def pushStack1(self,value):
         if self.s1Pointer >= int(self.length * 1 / 3):
             raise("Too many items in first stack")
 
@@ -31,14 +31,14 @@ class ThreeStacksOneArray:
         return item
 
     
-    def pushStack2(value):
+    def pushStack2(self,value):
         if self.s2Pointer >= int(self.length * 2 / 3):
             raise("Too many items in second stack")
 
         self.array[self.s2Pointer] = value
         self.s2Pointer = self.s2Pointer + 1
 
-    def popStack2():
+    def popStack2(self):
         if self.s2Pointer < int(self.length * 1 / 3):
             raise("No items left in first stack")
 
@@ -47,14 +47,14 @@ class ThreeStacksOneArray:
         return item
     
 
-    def pushStack3(value):
+    def pushStack3(self, value):
        if self.s3Pointer >= int(self.length * 3 / 3):
             raise("Too many items in third stack")
 
        self.array[self.s3Pointer] = value
        self.s3Pointer = self.s3Pointer + 1
 
-    def popStack3():
+    def popStack3(self):
         if self.s3Pointer < int(self.length * 2 / 3):
             raise("No items left in first stack")
 

@@ -8,13 +8,13 @@
 
 class SetOfStacks:
 
-    def __init__(threshold):
+    def __init__(self, threshold):
         #Initialize the set of stacks
         self.stacks = []
         self.currentStackIndex = -1
         self.threshold = threshold
 
-    def push(value):
+    def push(self,value):
         if len(self.stacks) == 0:
             newStack = []
             self.stacks.append(newStack)
@@ -30,7 +30,7 @@ class SetOfStacks:
 
         currentStack.append(value)
 
-    def pop():
+    def pop(self):
         #If there's no stacks, there's nothing to pop
         if len(self.stacks) == 0:
             raise("Nothing to pop")
@@ -55,7 +55,7 @@ class SetOfStacks:
         return value
 
 
-    def popAt(stackIndex):
+    def popAt(self,stackIndex):
         if stackIndex > self.currentStack:
             raise("No such stack")
 
