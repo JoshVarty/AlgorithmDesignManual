@@ -8,10 +8,11 @@ class Node:
     def __init__(self, value):
         self.data = value
 
-        #Can be used as either a binary tree or regular graph
+        #Can be used as either a binary tree or regular graph (or Linked List....)
         self.children = []
         self.left = None
         self.right = None
+        self.next = None
 
 def dfs(node, list = None):
 
