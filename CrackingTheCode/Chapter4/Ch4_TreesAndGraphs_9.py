@@ -42,9 +42,6 @@ assert(len(result) == 6)
 
 def interleavePermutations(nums1, nums2, idx1 = 0, idx2 = 0, prefix = []):
 
-    left = []
-    right = []
-
     permutations = []
 
     if idx1 >= len(nums1):
@@ -52,7 +49,6 @@ def interleavePermutations(nums1, nums2, idx1 = 0, idx2 = 0, prefix = []):
     
     if idx2 >= len(nums2):
         return [prefix + nums1[idx1:]]
-
 
     prefix.append(nums1[idx1])
     left = interleavePermutations(nums1, nums2, idx1 + 1, idx2, prefix)
