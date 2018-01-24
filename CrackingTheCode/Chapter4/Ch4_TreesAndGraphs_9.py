@@ -53,11 +53,14 @@ def interleavePermutations(nums1, nums2, idx1 = 0, idx2 = 0, prefix = []):
     if idx2 >= len(nums2):
         return [prefix + nums1[idx1:]]
 
-    leftPrefix = prefix + [nums1[idx1]]
-    left = interleavePermutations(nums1, nums2, idx1 + 1, idx2, leftPrefix)
 
-    rightPrefix = prefix + [nums2[idx2]]
-    right = interleavePermutations(nums1, nums2, idx1, idx2 + 1, rightPrefix)
+    prefix.append(nums1[idx1])
+    left = interleavePermutations(nums1, nums2, idx1 + 1, idx2, prefix)
+    prefix.pop()
+
+    prefix.append(nums2[idx2])
+    right = interleavePermutations(nums1, nums2, idx1, idx2 + 1, prefix)
+    prefix.pop()
 
     left.extend(right)
     return left
