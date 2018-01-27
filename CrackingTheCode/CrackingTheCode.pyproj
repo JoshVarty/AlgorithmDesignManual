@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter4\Ch4_TreesAndGraphs_10.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -51,6 +52,10 @@
     <Compile Include="Chapter3\Ch3_StacksAndQueues_3.py" />
     <Compile Include="Chapter3\Ch3_StacksAndQueues_2.py" />
     <Compile Include="Chapter3\Ch3_StacksAndQueues_1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chapter4\Ch4_TreesAndGraphs_11.py" />
+    <Compile Include="Chapter4\Ch4_TreesAndGraphs_12.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Chapter4\Ch4_TreesAndGraphs_7.py" />
