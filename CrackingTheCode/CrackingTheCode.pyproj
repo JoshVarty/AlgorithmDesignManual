@@ -4,8 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>Chapter5\Ch5_RecursionAndDP_1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -73,6 +72,7 @@
     <Compile Include="Chapter4\Graph.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter5\Ch5_RecursionAndDP_1.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|VisualStudio|Josh" />
@@ -82,6 +82,7 @@
     <Folder Include="Chapter2\" />
     <Folder Include="Chapter3\" />
     <Folder Include="Chapter4\" />
+    <Folder Include="Chapter5\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
