@@ -47,10 +47,68 @@ result = countWays(5)
 assert(result == 7 + 4 + 2)
 
 
+#Using memoization instead
+def countWaysMemo(numSteps, lookup = []):
+
+    if numSteps < 0:
+        return 0
+
+    if len(lookup) == 0:
+        lookup = [-1 for _ in range(numSteps + 1)]
+        lookup[0] = 1
+
+    if lookup[numSteps] != -1:
+        return lookup[numSteps]
+
+    numWays = countWaysMemo(numSteps - 1, lookup) + countWaysMemo(numSteps - 2, lookup) +  countWaysMemo(numSteps - 3, lookup) 
+    lookup[numSteps] = numWays
+    return numWays
+
+result = countWaysMemo(1)
+assert(result == 1)
+
+result = countWaysMemo(2)
+assert(result == 2)
+
+result = countWaysMemo(3)
+assert(result == 4)
+
+result = countWaysMemo(4)
+assert(result == 7)
+
+result = countWaysMemo(5)
+assert(result == 7 + 4 + 2)
 
 
+def countWaysConstantSpace(numSteps):
+
+    threeBack = 0
+    twoBack = 0
+    oneBack = 1
+
+    current = 0
+
+    for i in range(numSteps):
+
+        current = threeBack + twoBack + oneBack
+
+        (threeBack, twoBack, oneBack) = (twoBack, oneBack, current)
 
 
+    return current
 
 
+result = countWaysConstantSpace(1)
+assert(result == 1)
 
+result = countWaysConstantSpace(2)
+assert(result == 2)
+
+result = countWaysConstantSpace(3)
+assert(result == 4)
+
+result = countWaysConstantSpace(4)
+assert(result == 7)
+
+result = countWaysConstantSpace(5)
+assert(result == 7 + 4 + 2)
