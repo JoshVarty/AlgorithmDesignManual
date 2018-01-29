@@ -49,3 +49,62 @@ assert(result == None)
 result = magicIndex([-1,0,1,2,5,9,16])
 assert(result == None)
 
+def magicIndexDupes(array):
+    return findMagicIndexDupes(array, 0, len(array) - 1)
+
+def findMagicIndexDupes(array, low, high):
+
+    if low > high:
+        return None
+
+    midPoint = int((high + low) / 2)
+
+    if array[midPoint] == midPoint:
+        return midPoint
+
+    leftIndex = min(midPoint - 1, array[midPoint])
+    left = findMagicIndexDupes(array, low, leftIndex)
+    if left is not None:
+        return left
+
+    rightIndex = max(midPoint + 1, array[midPoint])
+    right = findMagicIndexDupes(array, rightIndex, high)
+    return right
+
+
+result = magicIndexDupes([0])
+assert(result == 0)
+
+result = magicIndexDupes([-1,1])
+assert(result == 1)
+
+result = magicIndexDupes([-1,0,2])
+assert(result == 2)
+
+result = magicIndexDupes([-1,0,1,2,4,9,16])
+assert(result == 4)
+
+result = magicIndexDupes([1])
+assert(result == None)
+
+result = magicIndexDupes([-1,2])
+assert(result == None)
+
+result = magicIndexDupes([-1,0,3])
+assert(result == None)
+
+result = magicIndexDupes([-1,0,1,2,5,9,16])
+assert(result == None)
+
+#Dupes
+result = magicIndexDupes([1,1])
+assert(result == 1)
+
+result = magicIndexDupes([-1,-1,2])
+assert(result == 2)
+
+result = magicIndexDupes([-1,-1,2,4,5,5,5])
+assert(result == 2)
+
+result = magicIndexDupes([-1,-1,-1,4,4,6,6])
+assert(result == 4)
