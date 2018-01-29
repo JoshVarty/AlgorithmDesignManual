@@ -12,6 +12,11 @@ def getPath(grid):
 
     foundPath = tryFindPath(grid, 0, 0, visited, path)
 
+    if foundPath:
+        return path
+
+    return None
+
 def findPath(grid, i, j, visited, path):
 
     if i < 0 or j < 0 or grid[i][j] == False:
