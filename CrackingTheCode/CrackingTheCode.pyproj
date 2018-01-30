@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter8\Ch8_RecursionAndDP_3.py</StartupFile>
+    <StartupFile>Chapter8\Ch8_RecursionAndDP_4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -75,6 +75,7 @@
     <Compile Include="Chapter5\Ch5_RecursionAndDP_2.py" />
     <Compile Include="Chapter5\Ch5_RecursionAndDP_1.py" />
     <Compile Include="Chapter8\Ch8_RecursionAndDP_1.py" />
+    <Compile Include="Chapter8\Ch8_RecursionAndDP_4.py" />
     <Compile Include="Chapter8\Ch8_RecursionAndDP_3.py" />
     <Compile Include="Chapter8\Ch8_RecursionAndDP_2.py" />
   </ItemGroup>
