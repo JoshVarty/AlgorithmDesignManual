@@ -72,7 +72,6 @@
     <Compile Include="Chapter4\Graph.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Chapter5\Ch5_RecursionAndDP_2.py" />
     <Compile Include="Chapter8\Ch8_RecursionAndDP_1.py" />
     <Compile Include="Chapter8\Ch8_RecursionAndDP_7.py" />
     <Compile Include="Chapter8\Ch8_RecursionAndDP_6.py" />
@@ -88,7 +87,6 @@
     <Folder Include="Chapter2\" />
     <Folder Include="Chapter3\" />
     <Folder Include="Chapter4\" />
-    <Folder Include="Chapter5\" />
     <Folder Include="Chapter8\" />
     <Folder Include="Chapter8\" />
   </ItemGroup>
