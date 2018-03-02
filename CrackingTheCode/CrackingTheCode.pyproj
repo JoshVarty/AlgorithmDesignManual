@@ -23,6 +23,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Chapter16\Ch16_Moderate_12.py" />
     <Compile Include="Chapter16\Ch16_Moderate_11.py" />
     <Compile Include="Chapter16\Ch16_Moderate_10.py" />
     <Compile Include="Chapter16\Ch16_Moderate_6.py" />
