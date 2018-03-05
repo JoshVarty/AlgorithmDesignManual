@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter16\Ch16_Moderate_16.py</StartupFile>
+    <StartupFile>Chapter16\Ch16_Moderate_17.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Chapter16\Ch16_Moderate_17.py" />
     <Compile Include="Chapter16\Ch16_Moderate_16.py" />
     <Compile Include="Chapter16\Ch16_Moderate_15.py" />
     <Compile Include="Chapter16\Ch16_Moderate_13.py" />
