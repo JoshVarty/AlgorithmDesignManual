@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter16\Ch16_Moderate_24.py</StartupFile>
+    <StartupFile>Chapter17\Ch17_Moderate_01.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -44,6 +44,7 @@
     <Compile Include="Chapter16\Ch16_Moderate_1.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter17\Ch17_Moderate_01.py" />
     <Compile Include="Chapter1\Ch1_ArraysAndStrings_2.py" />
     <Compile Include="Chapter1\Ch1_ArraysAndStrings_1.py" />
     <Compile Include="Chapter1\Ch1_ArraysAndStrings_8.py" />
@@ -118,6 +119,7 @@
     <Folder Include="Chapter8\" />
     <Folder Include="Chapter8\" />
     <Folder Include="Chapter16\" />
+    <Folder Include="Chapter17\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
