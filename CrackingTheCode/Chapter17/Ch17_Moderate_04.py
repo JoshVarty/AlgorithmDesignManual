@@ -33,7 +33,7 @@ def missingNumber(numbers, n):
 
 
 def setBit(number, pos, bit):
-    mask = bit << pos
+    mask = 1 << pos
     number = number & ~mask
     if bit == 1:
         number = number | mask
