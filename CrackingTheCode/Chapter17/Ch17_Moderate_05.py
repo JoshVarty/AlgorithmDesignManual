@@ -18,7 +18,7 @@ def longestSubarray(input):
 
     lookup = {0:-1}
     maxPair = (0, 0)
-    for idx, delta in differences:
+    for idx, delta in enumerate(differences):
         if delta not in lookup:
             lookup[delta] = idx
         else:

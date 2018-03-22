@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5a491279-eb07-486e-b281-d219439aea37</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Chapter17\Ch17_Moderate_05.py</StartupFile>
+    <StartupFile>Chapter17\Ch17_Moderate_06.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -44,6 +44,7 @@
     <Compile Include="Chapter16\Ch16_Moderate_1.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter17\Ch17_Moderate_06.py" />
     <Compile Include="Chapter17\Ch17_Moderate_05.py" />
     <Compile Include="Chapter17\Ch17_Moderate_04.py" />
     <Compile Include="Chapter17\Ch17_Moderate_03.py" />
